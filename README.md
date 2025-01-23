@@ -1,4 +1,4 @@
-# Laboratory Result Report
+# Hospital discharge report
 
 This is a draft publication by the Interoperability project Team. The continuous build is published in https://build.fhir.org/ig/hl7-cz/hdr
 
