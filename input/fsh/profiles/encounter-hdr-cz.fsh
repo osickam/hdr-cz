@@ -34,7 +34,7 @@ Description: "This profile defines how to represent Inpatient Encounter in HL7 F
 
 * participant
   * individual 0..1
-  * individual only Reference (CZ_PractitionerCore or PractitionerRoleEuCore or RelatedPerson)
+  * individual only Reference (PractitionerEuCore or PractitionerRoleEuCore or RelatedPerson)
 
 * participant
   * ^short = "List of participants involved in the encounters"
@@ -44,21 +44,21 @@ Description: "This profile defines how to represent Inpatient Encounter in HL7 F
   * ^slicing.ordered = false
   * ^slicing.rules = #open
 
-* participant contains admitter 0..*
-* participant[admitter]
-  * ^short = "Admitting professional"
-  * type = $v3-ParticipationType#ADM
+// * participant contains admitter 0..*
+// * participant[admitter]
+//   * ^short = "Admitting professional"
+//   * type = $v3-ParticipationType#ADM
 
 
-* participant contains discharger 0..*
-* participant[discharger]
-  * ^short = "Discharging professional"
-  * type = $v3-ParticipationType#DIS
+// * participant contains discharger 0..*
+// * participant[discharger]
+//   * ^short = "Discharging professional"
+//   * type = $v3-ParticipationType#DIS
 
-* participant contains referrer 0..*
-* participant[referrer]
-  * ^short = "Referring professional"
-  * type = $v3-ParticipationType#REF
+// * participant contains referrer 0..*
+// * participant[referrer]
+//   * ^short = "Referring professional"
+//   * type = $v3-ParticipationType#REF
 
 
 * diagnosis ^short = "The list of diagnosis relevant to this encounter, see comment"
