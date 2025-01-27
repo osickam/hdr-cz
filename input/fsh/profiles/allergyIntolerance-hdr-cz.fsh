@@ -1,8 +1,10 @@
-Profile: AllergyIntoleranceHdrCz
+Profile: CZ_AllergyIntoleranceHdr
 Parent: AllergyIntolerance
-Id: AllergyIntoleranceHdrCz
-Title: "Allergy Intolerance (CZ HDR) / Alergie a intolerance"
+Id: cz-allergyIntolerance-hdr
+Title: "Allergy Intolerance (CZ HDR)"
 Description: "This profile defines Allergy Intolerance used in Czech healthcare environments to capture patients’ previously expressed wishes (dříve vyslovená přání) regarding future medical care. It ensures consistent and legally compliant documentation of patient instructions and preferences for treatment, reflecting the Czech HDR requirements."
+
+* insert SetFmmandStatusRule (1, draft)
 
 * id 0..0
 * meta 0..0

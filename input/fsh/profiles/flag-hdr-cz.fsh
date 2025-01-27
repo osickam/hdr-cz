@@ -1,22 +1,20 @@
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Profile:  FlagHdrCz
+Profile:  CZ_FlagHdr
 Parent:   Flag
-Id:       FlagHdrCz
-Title:    "Flag (CZ HDR) / Varování"
+Id:       cz-flag-hdr
+Title:    "Flag (CZ HDR)"
 Description: "This profile constrains the Flag resource to represent alerts or warnings in FHIR for the purpose of this project."
-//-------------------------------------------------------------------------------------------
 
-//* insert SetFmmandStatusRule (1, draft)
+* insert SetFmmandStatusRule (1, draft)
 
 * id 0..0
 * meta 0..0
 * implicitRules 0..0
 * language 0..0
 
-* text ^short = "Text summary of the resource, for human interpretation / Textové shrnutí zdroje, určené k lidskému zpracování."
+* text ^short = "Text summary of the resource, for human interpretation."
 * contained 0..0
 * identifier 0..0
-* status ^short = "active | inactive | entered-in-error / aktivní | neaktivní | zadáno omylem"
+//* status ^short = "active | inactive | entered-in-error / aktivní | neaktivní | zadáno omylem"
 * category 0..1
 * category ^short = "Clinical, administrative, etc. / Označení varování?"
 /// Onemocnění či stav - Stav či onemocnění, které je zdrojem/příčinou pro varování. 0..*

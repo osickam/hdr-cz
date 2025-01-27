@@ -1,9 +1,11 @@
-Profile: AdvanceDirectivesHdrCz
+Profile: CZ_AdvanceDirectivesHdr
 //Parent: Resource
 Parent: Consent
-Id: Advance-Directives-Hdr-Cz
-Title: "Advance Directives (CZ HDR) / Dříve vyslovaná přání"
+Id: cz-advanceDirectives-hdr
+Title: "Advance Directives (CZ HDR)"
 Description: "This profile defines Advance Directives used in Czech healthcare environments to capture patients’ previously expressed wishes (dříve vyslovená přání) regarding future medical care. It ensures consistent and legally compliant documentation of patient instructions and preferences for treatment, reflecting the Czech HDR requirements."
+
+* insert SetFmmandStatusRule (1, draft)
 
 // Dle zadání:
 // Dříve vyslovené přání
