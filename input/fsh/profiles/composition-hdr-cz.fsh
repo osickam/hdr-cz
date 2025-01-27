@@ -28,9 +28,10 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * extension contains $composition.version-r5 named compositionVersionR5 0..
 * extension[compositionVersionR5].valueString ^short = "Business version"
 
-* extension contains $information-recipient named information-recipient 0..*
-* extension[information-recipient]
-* extension[information-recipient].valueReference only Reference( PractitionerRoleEuCore or PractitionerEuCore or Device or PatientEuCore or RelatedPerson or  OrganizationEuCore)
+//HON TODO fixme
+// * extension contains $information-recipient named information-recipient 0..*
+// * extension[information-recipient]
+// * extension[information-recipient].valueReference only Reference( PractitionerRoleEuCore or PractitionerEuCore or Device or PatientEuCore or RelatedPerson or OrganizationEuCore)
 
 /* GC TO DO
 - check if we need a R5 composition.status
@@ -164,13 +165,15 @@ Description: "This profile defines how to represent Composition resource in HL7 
       This section documents the relevant allergies or intolerances (conditions\) for that patient\, describing the kind of reaction (e.g. rash\, anaphylaxis\,..\); preferably the agents that cause it; and optionally the criticality and the certainty of the allergy.\r\nAt a minimum\, it should list currently active and any relevant historical allergies and adverse reactions.\r\nIf no information about allergies is available\, or if no allergies are known this should be clearly documented in the section.,
       $loinc#48765-2 )   // CODE
   * entry 1..
-  * entry only Reference(AllergyIntoleranceEpsEu or DocumentReference )
+  //* entry only Reference(AllergyIntoleranceEpsEu or DocumentReference )
+  // HON TODO fix me
+  * entry only Reference(AllergyIntolerance or DocumentReference )
   * insert SectionEntrySliceComRules(Relevant allergies or intolerances (conditions\) for that patient.,
     It lists the relevant allergies or intolerances (conditions\) for that patient\, describing the kind of reaction (e.g. rash\, anaphylaxis\,..\); preferably the agents that cause it; and optionally the criticality and the certainty of the allergy.\r\nAt a minimum\, it should list currently active and any relevant historical allergies and adverse reactions.\r\n This entry shall be used to document that no information about allergies is available\, or that no allergies are known .)
   // entry slices
-  * insert SectionEntrySliceDefRules (allergyIntolerance, 0.. , Allergy entry,
-    Allergy entry, AllergyIntoleranceEpsEu)
-
+  // HON TODO fix me
+  //* insert SectionEntrySliceDefRules (allergyIntolerance, 0.. , Allergy entry, Allergy entry, AllergyIntoleranceEpsEu)
+  * insert SectionEntrySliceDefRules (allergyIntolerance, 0.. , Allergy entry, Allergy entry, AllergyIntolerance)
 
 // -------------------------------------
 // Alert 0 .. 1
@@ -251,8 +254,9 @@ $loinc#10160-0 ) // 	History of Medication use Narrative
   * entry only Reference(Observation or DiagnosticReport or DocumentReference)
 
   * entry insert OpenReferenceSlicePerTypeRules (significant results, significant results)
-  * insert SectionEntrySliceDefRules (labResult, 0.. , Laboratory Result ,
-    Laboratory Result  , $Observation-resultslab-eu-lab)
+  // HON TODO Fix me
+  //* insert SectionEntrySliceDefRules (labResult, 0.. , Laboratory Result ,Laboratory Result  , $Observation-resultslab-eu-lab)
+  * insert SectionEntrySliceDefRules (labResult, 0.. , Laboratory Result , Laboratory Result, $Observation-resultslab-eu-lab)
   * insert SectionEntrySliceDefRules (radResult, 0.. , Radiology Result ,
     Radiology Result  ,$Observation-results-radiology-uv-ips)
     
