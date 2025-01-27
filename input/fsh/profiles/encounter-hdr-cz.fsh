@@ -6,7 +6,7 @@ Title:    "Encounter (HDR)"
 Description: "This profile defines how to represent Inpatient Encounter in HL7 FHIR for the scope of this guide."
 
 // this statement says that this profile conforms with the eu lab one
-* insert ImposeProfile($Encounter-eu-core,0)
+* insert ImposeProfile($Encounter-eu-hdr,0)
 
 * insert SetFmmandStatusRule (1, draft)
 
