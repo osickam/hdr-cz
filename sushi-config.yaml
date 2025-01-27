@@ -65,16 +65,10 @@ dependencies:
 pages:
   index.md:
     title: Home
-# general-guidance.md:
-#   title: General Guidance
-# identifiers.md:
-#   title: Identifiers
-# artifacts.xml:
-#   title: Summary artifacts
-# profiles-and-extensions.md:
-#   title: Profiles and extensions
-# downloads.md:
-#   title: Download
+  profiles-and-extensions.md:
+    title: Profiles and extensions
+#downloads.md:
+   #title: Download
 #
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the ImplementationGuide
@@ -148,9 +142,9 @@ menu:
 #  Guidance:
 #    General guidance: general-guidance.html
 #    Identifiers: identifiers.html
-#  Artifacts:
-#    Czech artifacts: artifacts.html
-#    Profiles and extensions: profiles-and-extensions.html
+  Artifacts:
+    Czech artifacts: artifacts.html
+    Profiles and extensions: profiles-and-extensions.html
 #  About:
 #    Downloads: downloads.html
 
