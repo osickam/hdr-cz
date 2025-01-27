@@ -5,8 +5,10 @@ Id: cz-encounter-hdr
 Title:    "Encounter (HDR)"
 Description: "This profile defines how to represent Inpatient Encounter in HL7 FHIR for the scope of this guide."
 
+// this statement says that this profile conforms with the eu lab one
+* insert ImposeProfile($Encounter-eu-hdr,0)
+
 * insert SetFmmandStatusRule (1, draft)
-* insert ImposeProfile($EncounterEuHdr, 0)
 
 
 * status from EncounterStatusHdrVS
@@ -24,8 +26,8 @@ Description: "This profile defines how to represent Inpatient Encounter in HL7 F
   * ^short = "Encounter priority" // add voc binding
 
 * subject only Reference (CZ_PatientCore)
-
 * subject 1..1
+
   * ^short = "The patient present at the encounter"
 * basedOn ^short = "The request for which this encounter has been made"
 * period
