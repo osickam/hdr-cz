@@ -1,10 +1,12 @@
 Profile: CZ_EncounterHdr
-Parent: EncounterEuHdr
+Parent: Encounter
 Id: cz-encounter-hdr
 //Id: encounter-cz-hdr
 Title:    "Encounter (HDR)"
 Description: "This profile defines how to represent Inpatient Encounter in HL7 FHIR for the scope of this guide."
 
+// this statement says that this profile conforms with the eu lab one
+* insert ImposeProfile($Encounter-eu-core,0)
 
 * insert SetFmmandStatusRule (1, draft)
 
@@ -21,7 +23,7 @@ Description: "This profile defines how to represent Inpatient Encounter in HL7 F
   * ^short = "Specific type of service." // voc binding needs to be descissed as it is only example
 * priority from AdmissionUrgencyHdrVS (preferred)
   * ^short = "Encounter priority" // add voc binding
-* subject only Reference (PatientEuCore)
+* subject only Reference (CZ_PatientCore)
 * subject 1..
   * ^short = "The patient present at the encounter"
 * basedOn ^short = "The request for which this encounter has been made"
@@ -44,21 +46,21 @@ Description: "This profile defines how to represent Inpatient Encounter in HL7 F
   * ^slicing.ordered = false
   * ^slicing.rules = #open
 
-// * participant contains admitter 0..*
-// * participant[admitter]
-//   * ^short = "Admitting professional"
-//   * type = $v3-ParticipationType#ADM
+* participant contains admitter 0..*
+* participant[admitter]
+  * ^short = "Admitting professional"
+  * type = $v3-ParticipationType#ADM
 
 
-// * participant contains discharger 0..*
-// * participant[discharger]
-//   * ^short = "Discharging professional"
-//   * type = $v3-ParticipationType#DIS
+* participant contains discharger 0..*
+* participant[discharger]
+  * ^short = "Discharging professional"
+  * type = $v3-ParticipationType#DIS
 
-// * participant contains referrer 0..*
-// * participant[referrer]
-//   * ^short = "Referring professional"
-//   * type = $v3-ParticipationType#REF
+* participant contains referrer 0..*
+* participant[referrer]
+  * ^short = "Referring professional"
+  * type = $v3-ParticipationType#REF
 
 
 * diagnosis ^short = "The list of diagnosis relevant to this encounter, see comment"
