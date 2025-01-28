@@ -1,7 +1,7 @@
 Profile:  CZ_FlagHdr
 Parent:   Flag
 Id:       cz-flag-hdr
-Title:    "Flag (CZ HDR)"
+Title:    "Flag (HDR)"
 Description: "This profile constrains the Flag resource to represent alerts or warnings in FHIR for the purpose of this project."
 
 * insert SetFmmandStatusRule (1, draft)
