@@ -7,7 +7,7 @@ Usage: #definition
 * status = #draft
 * experimental = true
 * description = """eHN HDR Advance Directives Model to this guide mapping"""
-* group[+].source = "http://hl7.cz/fhir/hdr/StructureDefinition/AdvanceDirectives"
+* group[+].source = "https://hl7.cz/fhir/hdr/StructureDefinition/AdvanceDirectives"
 * group[=].target = "https://hl7.cz/fhir/hdr/StructureDefinition/cz-composition-hdr"
 * group[=].element[+].code = #AdvanceDirectives.livingWill
 * group[=].element[=].display = "A.2.1.1 - Living will"
@@ -26,7 +26,7 @@ Usage: #definition
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #relatedto
 * group[=].element[=].target.comment = "Composition.section:sectionAdvanceDirectives.entry.ofType(DocumentReference)"
-* group[+].source = "http://hl7.cz/fhir/hdr/StructureDefinition/AdvanceDirectives"
+* group[+].source = "https://hl7.cz/fhir/hdr/StructureDefinition/AdvanceDirectives"
 * group[=].target = "http://hl7.org/fhir/StructureDefinition/Consent"
 * group[=].element[+].code = #AdvanceDirectives.livingWill.date
 * group[=].element[=].display = "A.2.1.1.1 - Date and time"
