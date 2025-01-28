@@ -10,23 +10,23 @@ Description: "This profile defines Allergy Intolerance used in Czech healthcare 
 * meta 0..0
 * implicitRules 0..0
 * language 0..0
-* text ^short = "Text summary of the resource, for human interpretation / Popis alergie? nebo note?"
+* text ^short = "Text summary of the resource, for human interpretation"
 * contained 0..0
 * identifier 0..0
-* clinicalStatus ^short = "active | inactive | resolved / Stav (Klinický stav)"
-* verificationStatus ^short = "unconfirmed | confirmed | refuted | entered-in-error / Míra nejistoty"
-* type ^short = "allergy | intolerance - Underlying mechanism (if known) / Typ reakce"
-* category 0..0 //není požadováno rozličení lék x nelék x prostředí x..
-* criticality ^short = "low | high | unable-to-assess / Riziko"
-* code ^short = "Code that identifies the allergy or intolerance / Kód, který identifikuje alergii nebo intoleranci."
-//* patient 0..0 musí být vyplněn!
+* clinicalStatus ^short = "active | inactive | resolved"
+* verificationStatus ^short = "unconfirmed | confirmed | refuted | entered-in-error"
+* type ^short = "allergy | intolerance - Underlying mechanism (if known)"
+* category 0..0
+* criticality ^short = "low | high | unable-to-assess"
+* code ^short = "Code that identifies the allergy or intolerance"
+//* patient 
 * encounter 0..0
-* onset[x] ^short = "When allergy or intolerance was identified / Počátek období projevu"
+* onset[x] ^short = "When allergy or intolerance was identified"
 * recordedDate 0..0
-* note ^short = "Additional text not captured in other fields / Popis alergie?"
-* reaction ^short = "Adverse Reaction Events linked to exposure to substance / Detail alergické reakce"
+* note ^short = "Additional text not captured in other fields"
+* reaction ^short = "Adverse Reaction Events linked to exposure to substance"
 * reaction.id 0..0
-* reaction.substance ^short = "Specific substance or pharmaceutical product considered to be responsible for event / Specifická látka nebo farmaceutický produkt považovaný za příčinu události.???"
+* reaction.substance ^short = "Specific substance or pharmaceutical product considered to be responsible for event"
 * reaction.description 0..0
 * reaction.onset 0..0
 * reaction.severity 0..0

@@ -11,22 +11,22 @@ Description: "This profile defines Advance Directives used in Czech healthcare e
 * implicitRules 0..0
 * language 0..0
 
-* text ^short = "Text summary of the resource, for human interpretation / Komentář k projevenému přání pacienta"
+* text ^short = "Text summary of the resource, for human interpretation"
 
 * status ^short = "draft | proposed | active | rejected | inactive | entered-in-error /"
-* scope ^short = "Which of the four areas this resource covers (extensible) / prakticky:adr = Opatření, která mají být přijata, pokud již nejsou schopni se sami rozhodovat"
+* scope ^short = "Which of the four areas this resource covers (extensible)"
 
 * category 1..1
-* category ^short = "Classification of the consent statement - for indexing/retrieval / Typ přání (kódem nebo textem)"
+* category ^short = "Classification of the consent statement - for indexing/retrieval"
 
 * dateTime 1..1
-* dateTime ^short = "When this Consent was created or indexed / Datum a čas vytvoření"
+* dateTime ^short = "When this Consent was created or indexed"
 
 * performer 0..0
 * organization 0..0
 
 * source[x] 1..1
-* source[x] ^short = "Source from which this consent is taken / Fotokopie dokumentu či elektronický dokument s projeveným přáním pacienta mající náležitosti požadované zákonem"
+* source[x] ^short = "Source from which this consent is taken"
 
 * policy 0..0
 * policyRule 0..0
