@@ -1,7 +1,7 @@
 Profile: CZ_AllergyIntoleranceHdr
 Parent: AllergyIntolerance
 Id: cz-allergyIntolerance-hdr
-Title: "Allergy Intolerance (CZ HDR)"
+Title: "Allergy Intolerance (HDR)"
 Description: """This profile constrains the AllergyIntolerance resource for the purpose of this project."""
 * ^purpose = "This profile constrains the AllergyIntolerance resource for the purpose of project."
 
