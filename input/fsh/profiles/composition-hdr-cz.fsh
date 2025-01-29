@@ -45,18 +45,19 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * type ^short = "Kind of composition (\"Hospital Discharge Report\")"
 * type ^definition = "Specifies that this composition refer to a Hospital Discharge Report"
 * type = $loinc#34105-7 "Hospital Discharge summary"
-* subject only Reference(PatientEuCore)
+* subject only Reference(CZ_PatientCore)
 * subject 1..1
 * subject ^definition = "Who or what the composition is about. \r\nIn general a composition can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of livestock, or a set of patients that share a common exposure).\r\nFor the hdr the subject is always the patient."
 
 // * encounter only Reference (Encounter)
 
-* encounter only Reference (EncounterEuHdr)
+* encounter only Reference (CZ_EncounterHdr)
 
 * date ^short = "HDR date"
 * author ^short = "Who and/or what authored the Hospital Discharge Report"
 * author ^definition = "Identifies who is responsible for the information in the Hospital Discharge Report, not necessarily who typed it in."
-* author only Reference( PractitionerEuCore or PractitionerRoleEuCore or Device or Patient or RelatedPerson or Organization)
+//* author only Reference( CZ_PractitionerCore or CZ_PractitionerRoleCore or Device or CZ_PatientCore or RelatedPerson or CZ_OrganizationCore)
+* author only Reference( CZ_PractitionerCore or CZ_PractitionerRoleCore or CZ_MedicalDevice or CZ_PatientCore or RelatedPerson or CZ_OrganizationCore)
 
 
 * title ^short = "Hospital Discharge Report"
@@ -206,7 +207,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
     $loinc#11450-4) // Problem list
     // $sct#721981007)
   * entry 0..*
-  * entry only Reference( ConditionEuHdr ) // check if this is too restrictive
+  * entry only Reference( CZ_ConditionHdr ) // check if this is too restrictive
 
 
 * section contains sectionSignificantProcedures 0..1
@@ -618,7 +619,7 @@ $loinc#10160-0 ) // 	History of Medication use Narrative
     Plan of Care Section,
     The plan of care section contains a narrative description of the expectations for care including proposals\, goals\, and order requests for monitoring\, tracking\, or improving the condition of the patient.,
     $loinc#18776-5 )   // Plan of care note
-  * entry only Reference( CarePlanEpsEu or DocumentReference) // Check profiles
+  * entry only Reference( CZ_CarePlanHdr or DocumentReference) // Check profiles
 
 // -------------------------------------
 // Discharge Medications Section 0 … 1
