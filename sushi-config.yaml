@@ -41,6 +41,7 @@ dependencies:
   hl7.fhir.eu.laboratory: current
   hl7.fhir.eu.base.r4: current
   hl7.fhir.extensions.r5: 4.0.1
+  ihe.pharm.mpd: current
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
