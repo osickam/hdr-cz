@@ -41,6 +41,8 @@ Alias: $PractitionerRole-eu-core = http://hl7.eu/fhir/base/StructureDefinition/P
 Alias: $Encounter-eu-hdr = http://hl7.eu/fhir/hdr/StructureDefinition/encounter-eu-hdr
 Alias: $Composition-eu-hdr = http://hl7.eu/fhir/hdr/StructureDefinition/composition-eu-hdr
 Alias: $EncounterEuHdr = http://hl7.eu/fhir/hdr/StructureDefinition/EncounterEuHdr
+Alias: $CarePlan-eu-hdr = http://hl7.eu/fhir/hdr/StructureDefinition/carePlan-eu-eps
+Alias: $Condition-eu-hdr = http://hl7.eu/fhir/hdr/StructureDefinition/condition-eu-hdr
 
 //Alias: $bodySite = http://hl7.org/fhir/StructureDefinition/bodySite
 //Alias: $flag-detail = http://hl7.org/fhir/StructureDefinition/flag-detail
