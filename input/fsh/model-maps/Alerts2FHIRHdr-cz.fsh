@@ -7,8 +7,8 @@ Usage: #definition
 * status = #draft
 * experimental = true
 * description = """eHN HDR Alerts Model to this guide mapping"""
-* group[+].source = "http://hl7.eu/fhir/hdr/StructureDefinition/Alerts"
-* group[=].target = "http://hl7.eu/fhir/hdr/StructureDefinition/allergyIntolerance-eu-eps"
+* group[+].source = "https://hl7.cz/fhir/hdr/StructureDefinition/AlertsCz"
+* group[=].target = "https://hl7.cz/fhir/hdr/StructureDefinition/cz-allergyIntolerance-hdr"
 * group[=].element[+].code = #Alerts.allergy
 * group[=].element[=].display = "A.2.2.1 - Allergy and Intolerance"
 * group[=].element[=].target.code = #AllergyIntolerance
@@ -69,8 +69,8 @@ Usage: #definition
 * group[=].element[=].target.code = #AllergyIntolerance.code
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent
-* group[+].source = "http://hl7.eu/fhir/hdr/StructureDefinition/Alerts"
-* group[=].target = "http://hl7.eu/fhir/hdr/StructureDefinition/composition-eu-hdr"
+* group[+].source = "https://hl7.cz/fhir/hdr/StructureDefinition/AlertsCz"
+* group[=].target = "https://hl7.cz/fhir/hdr/StructureDefinition/cz-composition-hdr"
 * group[=].element[+].code = #Alerts.allergy
 * group[=].element[=].display = "A.2.2.1 - Allergy and Intolerance"
 * group[=].element[=].target.code = #Composition.section:sectionAllergies
@@ -86,8 +86,8 @@ Usage: #definition
 * group[=].element[=].target.code = #Composition.section:sectionAlerts.text
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #relatedto
-* group[+].source = "http://hl7.eu/fhir/hdr/StructureDefinition/Alerts"
-* group[=].target = "http://hl7.eu/fhir/hdr/StructureDefinition/flag-eu-eps"
+* group[+].source = "https://hl7.cz/fhir/hdr/StructureDefinition/AlertsCz"
+* group[=].target = "https://hl7.cz/fhir/hdr/StructureDefinition/cz-flag-hdr"
 * group[=].element[+].code = #Alerts.medicalAlerts.description
 * group[=].element[=].display = "A.2.2.2.1 - Healthcare alert description"
 * group[=].element[=].target.code = #Flag.text
