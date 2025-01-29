@@ -25,14 +25,12 @@ Description: "Czech hdr - example od advance directive"
 
 * provision.type = #permit
 
-* provision.code[0].coding[0].system = "http://hl7.org/fhir/sid/icd-10"
+* provision.code[0].coding[0].system = $icd10
 * provision.code[0].coding[0].code = #I50
 * provision.code[0].coding[0].display = "Heart failure"
 
-* provision.code[1].coding[0].system = "http://www.orpha.net/ORDO"
+* provision.code[1].coding[0].system = $orpha
 * provision.code[1].coding[0].code = #ORPHA330
 * provision.code[1].coding[0].display = "NYHA class IV"
 
 * status = #active
-
-* sourceAttachment.title = "Signed DNR statement"
