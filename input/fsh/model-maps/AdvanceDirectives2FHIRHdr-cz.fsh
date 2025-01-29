@@ -47,7 +47,7 @@ Usage: #definition
 * group[=].element[=].target.comment = "TO BE checked"
 * group[=].element[+].code = #AdvanceDirectives.livingWill.conditions
 * group[=].element[=].display = "A.2.1.1.4 - Related conditions"
-* group[=].element[=].target.code = #Consent
+* group[=].element[=].target.code = #Consent.provision.code
 * group[=].element[=].target.display = ""
-* group[=].element[=].target.equivalence = #unmatched
-* group[=].element[=].target.comment = "TO BE DEFINED"
+* group[=].element[=].target.equivalence = #relatedto
+* group[=].element[=].target.comment = "TO BE checked"
