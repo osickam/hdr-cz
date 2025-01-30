@@ -3,7 +3,7 @@ Profile: CZ_ConditionHdr
 Parent: Condition
 Id: cz-condition-hdr
 //Id: condition-cz-hdr
-Title: "Condition (HDR)"
+Title: "Condition (HDR CZ)"
 Description: """This profile represents the constraint applied to the Condition in the scope of this guide. It supports the Diagnostic summary part of the eHN data model adding two additional categories: First category distinguishes conditions present at admission and acquired during hospital stay, while second category is used to indicate impact of the condition to the treatment during hospital stay (treated, untreated)."""
 //-------------------------------------------------------------------------------------------
 

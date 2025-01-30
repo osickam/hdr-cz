@@ -1,5 +1,5 @@
-Logical: HeaderHdrEhncz
-Id: Headercz
+Logical: HeaderHdrCz
+Id: Header
 Title: "A.1 - Hospital Discharge Report header data element"
 Description: """Hospital Discharge Report - Hospital Discharge Report header data element - A.1 eHN"""
 * subject 1..1 Subject "A.1.1 - Identification and A.1.2 - related contact information of the Patient/subject" """Identification of the patient/subject and Patient/subject related contact information"""

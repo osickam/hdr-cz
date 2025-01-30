@@ -3,12 +3,12 @@ InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://hl7.cz/fhir/hdr/ConceptMap/hdrHeader2FHIR-cz-hdr"
 * name = "Header2FHIRczHdr"
-* title = "eHN Header Model to this guide Map"
+* title = "CZ Header Model to this guide Map"
 * status = #draft
 * experimental = true
-* description = """eHN HDR Header Model to this guide mapping"""
+* description = """CZ HDR Header Model to this guide mapping"""
 * group[+].source = "http://hl7.eu/fhir/hdr/StructureDefinition/Header"
-* group[=].target = "http://hl7.eu/fhir/base/StructureDefinition/organization-eu"
+* group[=].target = "https://hl7.cz/fhir/base/StructureDefinition/organization-cz"
 * group[=].element[+].code = #Header.payer.insuranceCode
 * group[=].element[=].display = "A.1.3.1 - Health insurance code"
 * group[=].element[=].target.code = #Organization.identifier
@@ -20,13 +20,13 @@ Usage: #definition
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
 * group[+].source = "http://hl7.eu/fhir/hdr/StructureDefinition/Header"
-* group[=].target = "http://hl7.eu/fhir/base/StructureDefinition/patient-eu-core"
+* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-patient"
 * group[=].element[+].code = #Header.subject
 * group[=].element[=].display = "A.1.1 - Identification and A.1.2 - related contact information of the Patient/subject"
 * group[=].element[=].target.code = #Patient
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[=].target.comment = "Composition.subject.ofType(Patient).conformsTo('http://hl7.eu/fhir/base/StructureDefinition/patient-eu-core')"
+* group[=].element[=].target.comment = "Composition.subject.ofType(Patient).conformsTo('https://hl7.cz/fhir/core/StructureDefinition/cz-patient')"
 * group[=].element[+].code = #Header.payer.insuranceNumber
 * group[=].element[=].display = "A.1.3.3 - Health insurance number"
 * group[=].element[=].target.code = #Patient.identifier
@@ -34,7 +34,7 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[=].target.comment = "If treated as one of the Patient identifiers; this applies in some jurisdictions."
 * group[+].source = "http://hl7.eu/fhir/hdr/StructureDefinition/Header"
-* group[=].target = "http://hl7.eu/fhir/core/StructureDefinition/practitionerRole-eu-core"
+* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-practitionerrole"
 * group[=].element[+].code = #Header.informationRecipient.identifier
 * group[=].element[=].display = "A.1.4.1 - Recipient identifier"
 * group[=].element[=].target.code = #PractitionerRole.identifier
@@ -126,7 +126,7 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[=].target.comment = "where attester.mode = 'legal'"
 * group[+].source = "http://hl7.eu/fhir/hdr/StructureDefinition/Header"
-* group[=].target = "http://hl7.eu/fhir/hdr/StructureDefinition/bundle-eu-hdr"
+* group[=].target = "https://hl7.cz/fhir/hdr/StructureDefinition/cz-bundle-hdr"
 * group[=].element[+].code = #Header.documentMetadata.identifier
 * group[=].element[=].display = "A.1.8.1 - Document ID"
 * group[=].element[=].target.code = #Bundle.identifier					
@@ -140,7 +140,7 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[=].target.comment = "If it is when this particular version of  this report has been assembled into a Bundle."
 * group[+].source = "http://hl7.eu/fhir/hdr/StructureDefinition/Header"
-* group[=].target = "http://hl7.eu/fhir/hdr/StructureDefinition/composition-eu-hdr"
+* group[=].target = "https://hl7.cz/fhir/hdr/StructureDefinition/cz-composition-hdr"
 * group[=].element[+].code = #Header.subject
 * group[=].element[=].display = "A.1.1 - Identification and A.1.2 - related contact information of the Patient/subject"
 * group[=].element[=].target.code = #Composition.subject		
