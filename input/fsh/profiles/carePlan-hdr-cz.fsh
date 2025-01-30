@@ -1,7 +1,7 @@
 Profile: CZ_CarePlanHdr
 Parent: CarePlan
 Id: cz-carePlan-hdr
-Title:    "Care Plan (HDR)"
+Title:    "Care Plan (HDR CZ)"
 Description: """This profile constrains the CarePlan resource for the purpose of this guide."""
 
 //impose profile for EU 
