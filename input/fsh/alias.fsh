@@ -39,11 +39,18 @@ Alias: $Patient-eu-core = http://hl7.eu/fhir/base/StructureDefinition/PatientEuC
 Alias: $Practitioner-eu-core = http://hl7.eu/fhir/base/StructureDefinition/PractitionerEuCore
 Alias: $PractitionerRole-eu-core = http://hl7.eu/fhir/base/StructureDefinition/PractitionerRoleEuCore
 
+// --- EU HDR Profiles
 Alias: $Encounter-eu-hdr = http://hl7.eu/fhir/hdr/StructureDefinition/encounter-eu-hdr
 Alias: $Composition-eu-hdr = http://hl7.eu/fhir/hdr/StructureDefinition/composition-eu-hdr
 Alias: $EncounterEuHdr = http://hl7.eu/fhir/hdr/StructureDefinition/EncounterEuHdr
 Alias: $CarePlan-eu-hdr = http://hl7.eu/fhir/hdr/StructureDefinition/carePlan-eu-eps
 Alias: $Condition-eu-hdr = http://hl7.eu/fhir/hdr/StructureDefinition/condition-eu-hdr
+Alias: $Procedure-eu-hdr = http://hl7.eu/fhir/hdr/StructureDefinition/procedure-eu-hdr
+Alias: $ObservationTravelEuHdr = http://hl7.eu/fhir/hdr/StructureDefinition/observation-travel-eu-hdr
+Alias: $ObservationSdohEuHdr = http://hl7.eu/fhir/hdr/StructureDefinition/observation-sdoh-eu-hdr
+Alias: $ObservationInfectiousContactEuHdr = http://hl7.eu/fhir/hdr/StructureDefinition/observation-infectious-contact-eu-hdr
+Alias: $BundleEuHdr = http://hl7.eu/fhir/hdr/StructureDefinition/bundle-eu-hdr
+
 
 //Alias: $bodySite = http://hl7.org/fhir/StructureDefinition/bodySite
 //Alias: $flag-detail = http://hl7.org/fhir/StructureDefinition/flag-detail
