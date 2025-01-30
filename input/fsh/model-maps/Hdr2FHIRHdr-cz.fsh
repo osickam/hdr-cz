@@ -3,12 +3,12 @@ InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://hl7.cz/fhir/hdr/ConceptMap/hdr2FHIR-cz-hdr"
 * name = "Hdr2FHIRCzHdr"
-* title = "eHN HDR Model to this guide Map"
+* title = "CZ HDR Model to this guide Map"
 * status = #draft
 * experimental = true
-* description = """eHN Hospital Discharge Report Model to this guide mapping"""
+* description = """CZ Hospital Discharge Report Model to this guide mapping"""
 * group[+].source = "http://hl7.eu/fhir/hdr/StructureDefinition/HospitalDischargeReport"
-* group[=].target = "http://hl7.eu/fhir/hdr/StructureDefinition/bundle-eu-hdr"
+* group[=].target = "https://hl7.cz/fhir/hdr/StructureDefinition/cz-bundle-hdr"
 * group[=].element[+].code = #HospitalDischargeReport.header
 * group[=].element[=].display = "A.1 - Hospital Discharge Report header data element"
 * group[=].element[=].target.code = #Bundle
@@ -16,7 +16,7 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #relatedto
 * group[=].element[=].target.comment = "See the header model and map for details"
 * group[+].source = "http://hl7.eu/fhir/hdr/StructureDefinition/HospitalDischargeReport"
-* group[=].target = "http://hl7.eu/fhir/hdr/StructureDefinition/composition-eu-hdr"
+* group[=].target = "https://hl7.cz/fhir/hdr/StructureDefinition/cz-composition-hdr"
 * group[=].element[+].code = #HospitalDischargeReport.body
 * group[=].element[=].display = "A.2 - Hospital Discharge Report body data element"
 * group[=].element[=].target.code = #Composition
