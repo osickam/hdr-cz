@@ -1,7 +1,7 @@
 Profile: CZ_ConsentHdr
 Parent: Consent
 Id: cz-consent-hdr
-Title: "Consent (Advance Directives) (HDR)"
+Title: "Consent (Advance Directives) (HDR CZ)"
 Description: """This profile constrains the Consent resource for the purpose of representing Advance Directives in this project."""
 * ^purpose = "This profile constrains the Consent resource to model Advance Directives, documenting a patient's future medical decisions."
 
