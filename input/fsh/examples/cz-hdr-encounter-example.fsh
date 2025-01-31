@@ -1,0 +1,50 @@
+Instance: CZ-Encounter-HDR-Example
+InstanceOf: Encounter
+Usage: #example
+Title: "CZ-Encounter-HDR Example"
+Description: "Czech HDR - example of an inpatient encounter"
+
+// Encounter status and class
+* status = #finished
+* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#IMP
+
+// Encounter type and subject
+* type[0].coding[0].system = "http://terminology.hl7.org/CodeSystem/encounter-type"
+* type[0].coding[0].code = #ADMS
+* type[0].coding[0].display = "Admission"
+* subject = Reference(CZ_PatientCore)
+
+// Encounter period
+* period.start = "2025-01-01T08:00:00+01:00"
+* period.end = "2025-01-10T08:00:00+01:00"
+
+// Reason for encounter
+* reasonCode[0].coding[0].system = "http://hl7.org/fhir/sid/icd-10"
+* reasonCode[0].coding[0].code = #I50
+* reasonCode[0].coding[0].display = "Heart failure"
+
+// Hospitalization details
+* hospitalization.admitSource.coding[0].system = "http://terminology.hl7.org/CodeSystem/admit-source"
+* hospitalization.admitSource.coding[0].code = #physician-referral
+* hospitalization.admitSource.coding[0].display = "Physician Referral"
+* hospitalization.dischargeDisposition.coding[0].system = "http://terminology.hl7.org/CodeSystem/discharge-disposition"
+* hospitalization.dischargeDisposition.coding[0].code = #home
+* hospitalization.dischargeDisposition.coding[0].display = "Home"
+
+// Location details
+* location[0].location = Reference(CZ_LocationCore)
+* location[0].period.start = "2025-01-01T08:00:00+01:00"
+* location[0].period.end = "2025-01-05T08:00:00+01:00"
+* serviceProvider = Reference(CZ_OrganizationCore)
+
+// Participant details
+* participant[0].individual = Reference(CZ_PractitionerCore)
+* participant[0].type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
+* participant[0].type.coding[0].code = #ADM
+* participant[0].type.coding[0].display = "Admitter"
+
+// Diagnosis details
+* diagnosis[0].condition = Reference(CZ_ConditionCore)
+* diagnosis[0].use.coding[0].system = "http://terminology.hl7.org/CodeSystem/diagnosis-role"
+* diagnosis[0].use.coding[0].code = #AD
+* diagnosis[0].use.coding[0].display = "Admission diagnosis"
