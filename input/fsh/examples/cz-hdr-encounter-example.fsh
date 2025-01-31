@@ -12,7 +12,7 @@ Description: "Czech HDR - example of an inpatient encounter"
 * type[0].coding[0].system = "http://terminology.hl7.org/CodeSystem/encounter-type"
 * type[0].coding[0].code = #ADMS
 * type[0].coding[0].display = "Admission"
-* subject = Reference(CZ_PatientCore)
+* subject = Reference(Mracena2)
 
 // Encounter period
 * period.start = "2025-01-01T08:00:00+01:00"
@@ -32,19 +32,20 @@ Description: "Czech HDR - example of an inpatient encounter"
 * hospitalization.dischargeDisposition.coding[0].display = "Home"
 
 // Location details
-* location[0].location = Reference(CZ_LocationCore)
+* location[0].location = Reference(Location-1)
 * location[0].period.start = "2025-01-01T08:00:00+01:00"
 * location[0].period.end = "2025-01-05T08:00:00+01:00"
-* serviceProvider = Reference(CZ_OrganizationCore)
+* serviceProvider = Reference(Organization-1)
 
 // Participant details
-* participant[0].individual = Reference(CZ_PractitionerCore)
+* participant[0].individual = Reference(Practitioner-2)
 * participant[0].type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
 * participant[0].type.coding[0].code = #ADM
 * participant[0].type.coding[0].display = "Admitter"
 
 // Diagnosis details
-* diagnosis[0].condition = Reference(CZ_ConditionCore)
+* diagnosis[0].condition = Reference(CZ-Condition-HDR-Example)
 * diagnosis[0].use.coding[0].system = "http://terminology.hl7.org/CodeSystem/diagnosis-role"
 * diagnosis[0].use.coding[0].code = #AD
 * diagnosis[0].use.coding[0].display = "Admission diagnosis"
+

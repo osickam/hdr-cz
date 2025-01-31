@@ -20,7 +20,7 @@ Description: "Czech HDR - example of a condition"
 * code.coding[0].display = "Heart failure"
 
 // Condition subject and onset
-* subject = Reference(CZ_PatientCore)
+* subject = Reference(Mracena2)
 * onsetDateTime = "2025-01-01T08:00:00+01:00"
 
 // Condition note
