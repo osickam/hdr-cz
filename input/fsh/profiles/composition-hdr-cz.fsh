@@ -28,10 +28,9 @@ Description: "This profile defines how to represent Composition resource in HL7 
 * extension contains $composition.version-r5 named compositionVersionR5 0..
 * extension[compositionVersionR5].valueString ^short = "Business version"
 
-//HON TODO fixme
-// * extension contains $information-recipient named information-recipient 0..*
-// * extension[information-recipient]
-// * extension[information-recipient].valueReference only Reference( PractitionerRoleEuCore or PractitionerEuCore or Device or PatientEuCore or RelatedPerson or OrganizationEuCore)
+* extension contains $information-recipient named information-recipient 0..*
+* extension[information-recipient]
+* extension[information-recipient].valueReference only Reference( CZ_PractitionerRoleCore or CZ_PractitionerCore or CZ_DeviceHdr or CZ_PatientCore or RelatedPerson or CZ_OrganizationCore)
 
 /* GC TO DO
 - check if we need a R5 composition.status
@@ -150,7 +149,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
     The functional status section shall contain a narrative description of capability of the patient to perform acts of daily living\, including possible needs of the patient to be continuously assessed by third parties. The invalidity status may in fact influence decisions about how to administer treatments.\r\nProfiles to express disabilities and functional assessments will be specified by future versions of this guide.,
     $loinc#47420-5) // Functional status assessment note
 
-  * entry only Reference(Condition or ClinicalImpression or Observation or DocumentReference or QuestionnaireResponse)
+  * entry only Reference(CZ_ConditionHdr or ClinicalImpression or Observation or DocumentReference or QuestionnaireResponse)
     * ^short = "Optional entry used to represent disabilities and functional assessments"
     * ^definition = "It describes capabilities of the patient to perform acts of daily living, including possible needs of the patient to be continuously assessed by third parties. The invalidity status may in fact influence decisions about how to administer treatments.\r\nProfiles to express disabilities and functional assessments will be specified by future versions of this guide."
 
@@ -165,18 +164,14 @@ Description: "This profile defines how to represent Composition resource in HL7 
       Allergies and Intolerances Section,
       This section documents the relevant allergies or intolerances (conditions\) for that patient\, describing the kind of reaction (e.g. rash\, anaphylaxis\,..\); preferably the agents that cause it; and optionally the criticality and the certainty of the allergy.\r\nAt a minimum\, it should list currently active and any relevant historical allergies and adverse reactions.\r\nIf no information about allergies is available\, or if no allergies are known this should be clearly documented in the section.,
       $loinc#48765-2 )   // CODE
-  * entry 1..
-  //* entry only Reference(AllergyIntoleranceEpsEu or DocumentReference )
-  // HON TODO fix me
-  //* entry only Reference(AllergyIntolerance or DocumentReference )
-  // TOH TODO - bez AllergyIntolerance chyba  
+  * entry 1.. 
   * entry only Reference(CZ_AllergyIntoleranceHdr or DocumentReference or AllergyIntolerance)
   * insert SectionEntrySliceComRules(Relevant allergies or intolerances (conditions\) for that patient.,
     It lists the relevant allergies or intolerances (conditions\) for that patient\, describing the kind of reaction (e.g. rash\, anaphylaxis\,..\); preferably the agents that cause it; and optionally the criticality and the certainty of the allergy.\r\nAt a minimum\, it should list currently active and any relevant historical allergies and adverse reactions.\r\n This entry shall be used to document that no information about allergies is available\, or that no allergies are known .)
   // entry slices
-  // HON TODO fix me
+  // HON TODO fix me after the new profile is created
   //* insert SectionEntrySliceDefRules (allergyIntolerance, 0.. , Allergy entry, Allergy entry, AllergyIntoleranceEpsEu)
-  * insert SectionEntrySliceDefRules (allergyIntolerance, 0.. , Allergy entry, Allergy entry, AllergyIntolerance)
+  * insert SectionEntrySliceDefRules (allergyIntolerance, 0.. , Allergy entry, Allergy entry, CZ_AllergyIntoleranceHdr)
 
 // -------------------------------------
 // Alert 0 .. 1
@@ -220,7 +215,7 @@ Description: "This profile defines how to represent Composition resource in HL7 
     $loinc#10185-7) // Hospital discharge procedures
     // $sct#721981007)
   * entry 1..
-  * entry only Reference(Procedure)
+  * entry only Reference(CZ_ProcedureHdr)
   * section ..0
 
 * section contains sectionMedicalDevices 0..1
@@ -420,7 +415,7 @@ $loinc#10160-0 ) // 	History of Medication use Narrative
       The Immunizations Section defines a patient's current immunization status and pertinent immunization history.\r\nThe primary use case for the Immunization Section is to enable communication of a patient's immunization status.\r\nThe section includes current immunization status\, and may contain the entire immunization history that is relevant to the period of time being summarized.
       , $loinc#11369-6 "History of Immunization Narrative")   // CODE
   * entry 1..
-  * entry only Reference(ImmunizationEuHdr  or ImmunizationRecommendationEuHdr
+  * entry only Reference(CZ_ImmunizationHdr  or ImmunizationRecommendationEuHdr
                           or DocumentReference  )
   * insert SectionEntrySliceComRules ( Patient's immunization status and pertinent history.
     , It defines the patient's current immunization status and pertinent immunization history.\r\nThe primary use case for the Immunization Section is to enable communication of a patient's immunization status.\r\n It may contain the entire immunization history that is relevant to the period of time being summarized. This entry shall be used to document that no information about immunizations is available\, or that no immunizations are known. ) //'
@@ -428,7 +423,7 @@ $loinc#10160-0 ) // 	History of Medication use Narrative
 
   // entry slices
   * insert SectionEntrySliceDefRules (immunization, 0.. , Immunization entry ,
-    Immunization entry  , ImmunizationEuHdr)
+    Immunization entry  , CZ_ImmunizationHdr)
 
 
 // -------------------------------------
@@ -441,7 +436,7 @@ $loinc#10160-0 ) // 	History of Medication use Narrative
       This section contains data defining the patient’s genetic relatives in terms of possible or relevant health risk factors that have a potential impact on the patient’s healthcare risk profile.
       ,  http://loinc.org#10157-6  )   // CODE
   * entry 0..
-  * entry only Reference(FamilyMemberHistory)
+  * entry only Reference(CZ_FamilyMemberHistoryHdr)
   * entry ^short = "Family History"
   * entry ^definition = "Family History"
 
@@ -635,7 +630,7 @@ $loinc#10160-0 ) // 	History of Medication use Narrative
     Hospital discharge medications defines the medications that the patient is intended to take\, or stop\, after discharge, 
     $loinc#75311-1 )   //  Discharge medications Narrative OR 10183-2 "Hospital discharge medications Narrative" or 	Discharge medications Narrative
   * entry 1..
-  * entry only Reference(MedicationRequestEuHdr or MedicationDispense)
+  * entry only Reference(CZ_MedicationRequestHdr or MedicationDispense)
 
 // -------------------------------------
 // Discharge Instructions Section 0 … 1
@@ -677,7 +672,7 @@ $loinc#10160-0 ) // 	History of Medication use Narrative
     Advance Directives Section,
     The advance directives section contains a narrative description of patient's advance directive.,
     $loinc#42348-3 )  // 	Advance directives
-  * entry only Reference(Consent or DocumentReference) // ==> Add Profile
+  * entry only Reference(CZ_ConsentHdr or DocumentReference) // ==> Add Profile
 
 
 * section contains sectionTravelHx ..1
