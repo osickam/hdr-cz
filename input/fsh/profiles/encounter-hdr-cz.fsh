@@ -2,7 +2,7 @@ Profile: CZ_EncounterHdr
 Parent: Encounter
 Id: cz-encounter-hdr
 //Id: encounter-cz-hdr
-Title:    "Encounter (HDR)"
+Title:    "Encounter (HDR CZ)"
 Description: "This profile defines how to represent Inpatient Encounter in HL7 FHIR for the scope of this guide."
 
 // this statement says that this profile conforms with the eu lab one
