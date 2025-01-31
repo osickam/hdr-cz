@@ -7,10 +7,7 @@ This includes both jurisdictional and cross-border scenarios.
 
 This guide does not describe how to exchange this message.
 
-Translated with DeepL.com (free version)
 ### Model
-
-Zde je překlad do angličtiny:
 
 Basic Sections of the Hospital Discharge Report
 
