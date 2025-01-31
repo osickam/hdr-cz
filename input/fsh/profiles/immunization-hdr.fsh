@@ -2,7 +2,7 @@
 Profile:  CZ_ImmunizationHdr
 Parent:   Immunization
 Id:       cz-immunization-hdr
-Title:    "Immunization (HDR)"
+Title:    "Immunization (HDR CZ)"
 Description: """This profile constrains the Immunization resource for the purpose of this guide."""
 
 //-------------------------------------------------------------------------------------------

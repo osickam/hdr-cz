@@ -1,7 +1,7 @@
 Profile: CZ_FamilyMemberHistoryHdr
 Parent: FamilyMemberHistory
 Id: czh-familyMemberHistory-hdr
-Title: "FamilyMemberHistory (HDR)"
+Title: "FamilyMemberHistory (HDR CZ)"
 Description: "This profile represents the constraints applied to the FamilyMemberHistory resource by this guide."
 
 
