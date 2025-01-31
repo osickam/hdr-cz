@@ -10,6 +10,10 @@ Alias: $drzar = https://ncez.mzcr.cz/fhir/CodeSystem/cz-drzar
 Alias: $nrzp_povolani = https://ncez.mzcr.cz/fhir/CodeSystem/nrzp-povolani
 Alias: $uri = urn:ietf:rfc:3986
 Alias: $oid = urn:ietf:rfc:1155
+Alias: $icd10 = http://hl7.org/fhir/sid/icd-10
+Alias: $condition-category = http://terminology.hl7.org/CodeSystem/condition-category
+Alias: $diagnosis-role = http://terminology.hl7.org/CodeSystem/diagnosis-role
+Alias: $orpha = https://www.orpha.net
 
 // Extensions:
 Alias: $data-absent-reason = http://hl7.org/fhir/StructureDefinition/data-absent-reason
