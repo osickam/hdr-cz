@@ -3,7 +3,7 @@ InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://hl7.cz/fhir/hdr/ConceptMap/alerts2FHIR-cz-hdr"
 * name = "Alerts2FHIRCzHdr"
-* title = "eHN Alerts Model to this guide Map"
+* title = "CZ Alerts Model to this guide Map"
 * status = #draft
 * experimental = true
 * description = """eHN HDR Alerts Model to this guide mapping"""

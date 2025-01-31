@@ -1,7 +1,7 @@
 Instance: CZ-AdvanceDirectives-HDR-DNR
 InstanceOf: Consent
 Usage: #example
-Title: "CZ-AdvanceDirectives-HDR Example"
+Title: "AdvanceDirectives  DNR"
 Description: "Czech hdr - example od advance directive"
 
 
