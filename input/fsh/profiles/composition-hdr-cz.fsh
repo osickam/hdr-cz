@@ -3,7 +3,7 @@ Profile: CZ_CompositionHdr
 Parent: Composition
 Id: cz-composition-hdr
 //Id: composition-cz-hdr
-Title: "Composition (HDR)"
+Title: "Composition (HDR CZ)"
 Description: "This profile defines how to represent Composition resource in HL7 FHIR for the scope of this guide."
 //-------------------------------------------------------------------------------------------
 
