@@ -1,3 +1,5 @@
+///Taken form CZ Core can be changed in the future
+
 Instance: Mracena2
 InstanceOf: CZ_PatientCore
 Usage: #example
