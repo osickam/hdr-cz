@@ -8,6 +8,25 @@ This includes both jurisdictional and cross-border scenarios.
 This guide does not describe how to exchange this message.
 
 Translated with DeepL.com (free version)
+### Model
+
+Zde je překlad do angličtiny:
+
+Basic Sections of the Hospital Discharge Report
+
+| Section |	Cardinality	| Obligation | Link |
+| - | - | - | - |
+| A.1 Header with Administrative Document Data | 1..1 |	Mandatory | Link |
+| A.2 Document Content | 1..1 | Mandatory | - |
+| A.2.1 Previously Expressed Wishes | 0..1 | Required | Link |
+| A.2.2 Urgent Information | 1..1 | Mandatory | Link |
+| A.2.3 Hospitalization Data | 1..1 | Mandatory | Link |
+| A.2.4 Reason for Admission | 0..1 | Required | Link |
+| A.2.5 Condition at Admission (Initial Examination) | 0..1 | Optional | Link |
+| A.2.6 Medical History | 0..1 | Optional | Link |
+| A.2.7 Course of Hospitalization| 1..1| Mandatory| Link |
+| A.2.8 Condition at Discharge|	1..1| Mandatory | Link |
+| A.2.9 Recommendations| 0..1 | Required | Link |
 
 ### Scope
 This document presents Czech use concepts defined via FHIR processable artefacts; these are collaborative outputs with agreed approaches to varied kinds of healthcare related information based on the core FHIR R4 specification.
