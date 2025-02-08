@@ -13,7 +13,7 @@ version: 0.0.1
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
-# license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
+license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 jurisdiction: urn:iso:std:iso:3166#CZ "Czechia" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
@@ -35,8 +35,14 @@ publisher:
 #     uri: http://hl7.org/fhir/us/mcode/ImplementationGuide/hl7.fhir.us.mcode
 #     version: 1.0.0
 dependencies:
-  hl7.fhir.uv.ips: 1.1.0
+  hl7.fhir.uv.ips: current
   hl7.fhir.cz.core: current
+  hl7.fhir.eu.hdr: current
+  hl7.fhir.eu.laboratory: current
+  hl7.fhir.eu.base.r4: current
+  hl7.fhir.extensions.r5: 4.0.1
+  ihe.pharm.mpd: current
+  hl7.fhir.eu.extensions: current
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -62,16 +68,10 @@ dependencies:
 pages:
   index.md:
     title: Home
-# general-guidance.md:
-#   title: General Guidance
-# identifiers.md:
-#   title: Identifiers
-# artifacts.xml:
-#   title: Summary artifacts
-# profiles-and-extensions.md:
-#   title: Profiles and extensions
-# downloads.md:
-#   title: Download
+  profiles-and-extensions.md:
+    title: Profiles and extensions
+#downloads.md:
+   #title: Download
 #
 # The parameters property represents IG.definition.parameter. Rather
 # than a list of code/value pairs (as in the ImplementationGuide
@@ -145,9 +145,9 @@ menu:
 #  Guidance:
 #    General guidance: general-guidance.html
 #    Identifiers: identifiers.html
-#  Artifacts:
-#    Czech artifacts: artifacts.html
-#    Profiles and extensions: profiles-and-extensions.html
+  Artifacts:
+    Czech artifacts: artifacts.html
+    #Profiles and extensions: profiles-and-extensions.html
 #  About:
 #    Downloads: downloads.html
 
