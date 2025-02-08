@@ -3,7 +3,7 @@ InstanceOf: ConceptMap
 Usage: #definition
 * url = "http://hl7.cz/fhir/hdr/ConceptMap/advanceDirectives2FHIR-cz-hdr"
 * name = "AdvanceDirectives2FHIRCzHdr"
-* title = "eHN Advance Directives Model to this guide Map"
+* title = "CZ Advance Directives Model to this guide Map"
 * status = #draft
 * experimental = true
 * description = """eHN HDR Advance Directives Model to this guide mapping"""
