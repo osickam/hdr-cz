@@ -6,7 +6,7 @@ Usage: #example
 Description: "Patient, contact information and practitioner"
 
 * contained[+] = RegisteringProviderExample
-* identifier[RC] = rodnecislo_7161264528
+* identifier[RC] = rodnecislo__7161264528
 * identifier[RID][+].system = "https://ncez.mzcr.cz/fhir/sid/rid"
 * identifier[RID][=].value = "456789123"
 * identifier[PAS][+].system = "http://hl7.org/fhir/sid/passport-CZE"
