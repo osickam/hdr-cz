@@ -25,6 +25,11 @@ Basic Sections of the Hospital Discharge Report
 | A.2.8 Condition at Discharge|	1..1| Mandatory | [Link](ConceptMap-advanceDirectives2FHIR-cz-hdr.html) |
 | A.2.9 Recommendations| 0..1 | Required | [Link](ConceptMap-advanceDirectives2FHIR-cz-hdr.html) |
 
+### Laboratory Order
+<figure>
+  {% include labOrder_CIM.svg %}
+</figure>
+
 ### Scope
 This document presents Czech use concepts defined via FHIR processable artefacts; these are collaborative outputs with agreed approaches to varied kinds of healthcare related information based on the core FHIR R4 specification.
 
