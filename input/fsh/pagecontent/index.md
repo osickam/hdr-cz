@@ -18,6 +18,12 @@ This guide is divided into several pages which are listed at the top of each pag
 - [About]:
   - [Downloads](downloads.html): This page provides links to downloadable artefacts.
 
+
+##### Laboratory Order
+<figure>
+  {% include labOrder_CIM.svg %}
+</figure>  
+
 ### Dependencies
 
 {% include dependency-table.xhtml %}
