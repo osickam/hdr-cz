@@ -120,7 +120,6 @@ Description: "An example of the organization of a provider"
 * address[=].country = "CZ"
 
 
-
 Instance: Practitioner-2
 InstanceOf: CZ_PractitionerCore
 Usage: #example
