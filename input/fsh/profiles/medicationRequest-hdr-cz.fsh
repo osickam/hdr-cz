@@ -2,7 +2,7 @@
 Profile:  CZ_MedicationRequestHdr
 Parent:   MedicationRequest
 Id:       cz-medicationRequest-hdr
-Title:    "MedicationRequest (HDR)"
+Title:    "MedicationRequest (HDR CZ)"
 Description: "This profile constrains the MedicationRequest resource for the purpose of this guide, adapted from the MPD work."
 //-------------------------------------------------------------------------------------------
 

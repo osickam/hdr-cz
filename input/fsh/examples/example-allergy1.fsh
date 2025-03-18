@@ -25,11 +25,11 @@ Description: "Allergy"
 
 * criticality = #low
 
-* clinicalStatus.coding[0].system = #http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
+* clinicalStatus.coding[0].system = $allergyintolerance-clinical
 * clinicalStatus.coding[0].code = #active
 * clinicalStatus.coding[0].display = "Active"
 
-* verificationStatus.coding[0].system = #http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
+* verificationStatus.coding[0].system = $allergyintolerance-verification
 * verificationStatus.coding[0].code = #confirmed
 * verificationStatus.coding[0].display = "Confirmed"
 

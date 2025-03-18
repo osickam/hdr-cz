@@ -2,7 +2,7 @@ Profile: CZ_EncounterHdr
 Parent: Encounter
 Id: cz-encounter-hdr
 //Id: encounter-cz-hdr
-Title:    "Encounter (HDR)"
+Title:    "Encounter (HDR CZ)"
 Description: "This profile defines how to represent Inpatient Encounter in HL7 FHIR for the scope of this guide."
 
 // this statement says that this profile conforms with the eu lab one
@@ -15,7 +15,7 @@ Description: "This profile defines how to represent Inpatient Encounter in HL7 F
   * ^short = "Status of this Hospital stay"
   * ^definition = "At the discharge report status of the encounter should be always = \"finished\""
 
-* class from EncounterClassHdrVS (extensible)
+* class from $v3-ActClassHDR (extensible)
   * ^definition = "Concepts representing classification of inpatient encounter such as inpatient, emergency or others due to local variations."
 * type from EncounterTypeHdrVS (example)
   * ^short = "Specific type of Hospital stay"

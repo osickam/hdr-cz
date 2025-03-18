@@ -9,12 +9,11 @@ Description: """This profile constrains the Consent resource for the purpose of 
 
 * dateTime 1..1
 * category 1..1
-  * ^binding.valueSet = $sct
+  * ^binding.valueSet = "https://hl7.cz/fhir/ValueSet/cz-consent-category"
 * text 0..1
 * provision.code 0..*
   * ^short = "ICD-10 or Orphacode, etc. in the content"
-  * ^binding.valueSet = $icd10
-  * ^binding.valueSet = $orpha
+  * ^binding.valueSet = "https://hl7.cz/fhir/ValueSet/cz-provision-code"
   * ^binding.strength = #extensible
 
 

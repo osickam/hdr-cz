@@ -2,7 +2,7 @@
 Profile:  CZ_MedicationHdr
 Parent:   Medication
 Id:       cz-medication-hdr
-Title:    "Medication (HDR)"
+Title:    "Medication (HDR CZ)"
 Description: "This profile constrains the Medication resource for the purpose of this guide, adapted from the MPD work."
 //-------------------------------------------------------------------------------------------
 
