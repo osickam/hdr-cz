@@ -26,9 +26,11 @@ Basic Sections of the Hospital Discharge Report
 | A.2.9 Recommendations| 0..1 | Required | [Link](ConceptMap-advanceDirectives2FHIR-cz-hdr.html) |
 
 ### Laboratory Order
-<figure>
-  {% include labOrder_CIM.svg %}
-</figure>
+<div>
+<img src="labOrder_CIM.svg" class="figure-img img-responsive img-rounded center-block" width="70%">
+<p><strong>Fig. 1: TODO Popsat</strong></p>
+<p> </p>
+</div>
 
 ### Scope
 This document presents Czech use concepts defined via FHIR processable artefacts; these are collaborative outputs with agreed approaches to varied kinds of healthcare related information based on the core FHIR R4 specification.
