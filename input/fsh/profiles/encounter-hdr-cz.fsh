@@ -22,7 +22,7 @@ Description: "This profile defines how to represent Inpatient Encounter in HL7 F
   * ^definition = "Allows to classify encounter using information about care provision regimen during an inpatient encounter."
 * serviceType
   * ^short = "Specific type of service." // voc binding needs to be discussed as it is only example
-* priority from AdmissionUrgencyHdrVS (preferred)
+* priority from $v3-AdmissionUrgencyHDR (preferred)
   * ^short = "Encounter priority" // add voc binding
 
 * subject only Reference (CZ_PatientCore)
