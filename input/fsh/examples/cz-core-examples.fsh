@@ -6,17 +6,23 @@ Usage: #example
 Description: "Patient, contact information and practitioner"
 
 * contained[+] = RegisteringProviderExample
-* identifier[RC] = rodnecislo_7161264528
-* identifier[RID][+].system = "https://ncez.mzcr.cz/fhir/sid/rid"
-* identifier[RID][=].value = "456789123"
-* identifier[PAS][+].system = "http://hl7.org/fhir/sid/passport-CZE"
-* identifier[PAS][=].value = "23476533"
-* identifier[PAS][=].use = #official
-* identifier[PAS][=].type = $v2-0203#PPN
-* identifier[+].system = "http://hl7.org/fhir/sid/passport-SVK"
-* identifier[=].value = "88476522"
-* identifier[=].use = #official
-* identifier[=].type = $v2-0203#PPN
+* identifier[+]
+  * system = "https://ncez.mzcr.cz/fhir/sid/rcis"
+  * value = "7161264528"
+  * use = #official
+* identifier[+]
+  * system = "https://ncez.mzcr.cz/fhir/sid/rid"
+  * value = "456789123"
+* identifier[+]
+  * system = "http://hl7.org/fhir/sid/passport-CZE"
+  * value = "23476533"
+  * use = #official
+  * type = $v2-0203#PPN
+* identifier[+]
+  * system = "http://hl7.org/fhir/sid/passport-SVK"
+  * value = "88476522"
+  * use = #official
+  * type = $v2-0203#PPN
 
 * extension[nationality].extension[code].valueCodeableConcept = urn:iso:std:iso:3166#CZ
 * name.use = #usual
@@ -27,15 +33,16 @@ Description: "Patient, contact information and practitioner"
 * telecom.use = #home
 * gender = #female
 * birthDate = "1971-11-26"
-* address[+].use = #home
-* address[=].type = #physical
-* address[=].text = "Malé náměstí 13a, 150 00, Praha 5"
-* address[=].line[+] = "Malé náměstí 13a"
-* address[=].line[=].extension[streetName].valueString = "Malé náměstí"
-* address[=].line[=].extension[houseNumber].valueString = "13a"
-* address[=].city = "Praha"
-* address[=].postalCode = "15000"
-* address[=].country = "CZ"
+* address[+]
+  * use = #home
+  * type = #physical
+  * text = "Malé náměstí 13a, 150 00, Praha 5"
+  * line[+] = "Malé náměstí 13a"
+    * extension[streetName].valueString = "Malé náměstí"
+    * extension[houseNumber].valueString = "13a"
+  * city = "Praha"
+  * postalCode = "15000"
+  * country = "CZ"
 
 * contact[+].relationship.coding[+] = $v3-RoleCode#MTH "matka"
 * contact[=].relationship.coding[+] = $v2-0131#N "Příbuzný"
@@ -76,8 +83,6 @@ Description: "Patient, contact information and practitioner"
 
 * extension[registeringProvider][+].extension[value].valueReference = Reference (RegisteringProviderExample)
 * extension[registeringProvider][=].extension[category].valueCodeableConcept = $sct#700232004 "Všeobecné lékařské služby"
-//* extension[registeringProvider][+].extension[value].valueReference = Reference (RegisteringProviderExample)
-//* extension[registeringProvider][=].extension[category].valueCodeableConcept = $sct#700232004 "Všeobecné lékařské služby"
 * extension[registeringProvider][+].extension[value].valueReference = Reference (RegisteringProviderExample)
 * extension[registeringProvider][=].extension[category].valueCodeableConcept = $sct#310060005 "Gynekologické a porodnické služby"
 
@@ -115,7 +120,6 @@ Description: "An example of the organization of a provider"
 * address[=].country = "CZ"
 
 
-
 Instance: Practitioner-2
 InstanceOf: CZ_PractitionerCore
 Usage: #example
@@ -135,11 +139,11 @@ Description: "Practitioner id(NRZP)=987654321"
 
 Instance: Location-1
 InstanceOf: CZ_LocationCore
-Title: "Sample Czech Location"
+Title: "Example Czech Location"
 Description: "Example instance of a location conforming to the CZ_LocationCore profile."
 Usage: #example
 
-* id = "sample-cz-location"
+* id = "example-cz-location"
 * status = #active
 * name = "Nemocnice Praha"
 * description = "Hlavní nemocnice v Praze"
