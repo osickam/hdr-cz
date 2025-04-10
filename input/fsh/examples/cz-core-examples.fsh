@@ -103,6 +103,10 @@ Usage: #example
 Description: "An example of the organization of a provider"
 * identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/ico"
 * identifier[=].value = "27520536"
+//add identifier for ICZ
+* identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/icz"
+* identifier[=].value = "1234567890"
+
 * type[DRZAR] = $drzar#102 "Nemocnice"
 * name = "Nemocnice Chrudim"
 * telecom.system = #phone
