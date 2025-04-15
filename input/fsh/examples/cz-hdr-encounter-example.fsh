@@ -7,6 +7,9 @@ Description: "Czech HDR - example of an inpatient encounter"
 // Encounter status and class
 * status = #finished
 * class = $v3-ActCode#IMP
+* priority.coding[0].system = $v3-AdmissionUrgencyHDR
+* priority.coding[0].code = #EM
+* priority.coding[0].display = "Emergency"
 
 // Encounter type and subject
 * type[0].coding[0].system = $encounter-type
