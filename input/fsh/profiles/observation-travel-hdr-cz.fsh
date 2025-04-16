@@ -13,9 +13,9 @@ Description: "This profile sets minimum expectations for the Observation resourc
 * value[x] ^short = "Country visited"
 * value[x] ^definition = "The country visited."
 * value[x] only $CodeableConcept-uv-ips
-* valueCodeableConcept from $iso3166-1-2
+/** valueCodeableConcept from $iso3166-1-2
 * valueCodeableConcept ^short = "Country visited"
-* valueCodeableConcept ^definition = "The country visited."
+* valueCodeableConcept ^definition = "The country visited."*/
 
 * subject 1..
 * subject only Reference(CZ_PatientCore)

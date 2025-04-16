@@ -15,14 +15,14 @@ Description: "This profile defines how to represent Inpatient Encounter in HL7 F
   * ^short = "Status of this Hospital stay"
   * ^definition = "At the discharge report status of the encounter should be always = \"finished\""
 
-* class from EncounterClassHdrVS (extensible)
+* class from $v3-ActClassHDR (extensible)
   * ^definition = "Concepts representing classification of inpatient encounter such as inpatient, emergency or others due to local variations."
 * type from EncounterTypeHdrVS (example)
   * ^short = "Specific type of Hospital stay"
   * ^definition = "Allows to classify encounter using information about care provision regimen during an inpatient encounter."
 * serviceType
   * ^short = "Specific type of service." // voc binding needs to be discussed as it is only example
-* priority from AdmissionUrgencyHdrVS (preferred)
+* priority from $v3-AdmissionUrgencyHDR (preferred)
   * ^short = "Encounter priority" // add voc binding
 
 * subject only Reference (CZ_PatientCore)

@@ -7,12 +7,19 @@ Description: "Czech HDR - example of an inpatient encounter"
 // Encounter status and class
 * status = #finished
 * class = $v3-ActCode#IMP
+* priority.coding[0].system = $v3-AdmissionUrgencyHDR
+* priority.coding[0].code = #EM
+* priority.coding[0].display = "Emergency"
 
 // Encounter type and subject
 * type[0].coding[0].system = $encounter-type
-* type[0].coding[0].code = #ADMS
-* type[0].coding[0].display = "Admission"
+* type[0].coding[0].code = #DIS
+* type[0].coding[0].display = "Discharge"
 * subject = Reference(Mracena2)
+
+// Note for the encounter
+* extension[1].url = "http://hl7.org/fhir/StructureDefinition/encounter-note"
+* extension[1].valueString = "This is a test of the encounter note field."
 
 // Encounter period
 * period.start = "2025-01-01T08:00:00+01:00"
@@ -23,6 +30,12 @@ Description: "Czech HDR - example of an inpatient encounter"
 * reasonCode[0].coding[0].code = #I50
 * reasonCode[0].coding[0].display = "Heart failure"
 
+// Legal status of the encounter
+* extension[0].url = "http://example.org/fhir/StructureDefinition/legalStatus"
+* extension[0].valueCodeableConcept.coding[0].system = $sct
+* extension[0].valueCodeableConcept.coding[0].code = #legal
+* extension[0].valueCodeableConcept.coding[0].display = "Legal"
+
 // Hospitalization details
 * hospitalization.admitSource.coding[0].system = $admit-source
 * hospitalization.admitSource.coding[0].code = #physician-referral
@@ -32,10 +45,20 @@ Description: "Czech HDR - example of an inpatient encounter"
 * hospitalization.dischargeDisposition.coding[0].display = "Home"
 
 // Location details
-* location[0].location = Reference(Location-1)
+* location[0].location = Reference(Location-2)
 * location[0].period.start = "2025-01-01T08:00:00+01:00"
-* location[0].period.end = "2025-01-05T08:00:00+01:00"
-* serviceProvider = Reference(Organization-1)
+* location[0].period.end = "2025-01-03T08:00:00+01:00"
+
+* location[1].location = Reference(Location-3)
+* location[1].period.start = "2025-01-03T08:00:00+01:00"
+* location[1].period.end = "2025-01-07T08:00:00+01:00"
+
+* location[2].location = Reference(Location-4)
+* location[2].period.start = "2025-01-07T08:00:00+01:00"
+* location[2].period.end = "2025-01-10T08:00:00+01:00"
+
+// Adminiting provider details
+* serviceProvider = Reference(RegisteringProviderExample)
 
 // Participant details
 * participant[0].individual = Reference(Practitioner-2)
@@ -48,4 +71,6 @@ Description: "Czech HDR - example of an inpatient encounter"
 * diagnosis[0].use.coding[0].system = $diagnosis-role
 * diagnosis[0].use.coding[0].code = #AD
 * diagnosis[0].use.coding[0].display = "Admission diagnosis"
+
+
 
