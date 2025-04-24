@@ -1,4 +1,4 @@
-Instance: DischargeDocumentHTML
+Instance: DischargeDocumenPDF
 InstanceOf: DocumentReference
 Title: "Discharge Summary Document - PDF"
 Description: "DocumentReference with Base64 PDF content directly inserted"
@@ -17,7 +17,7 @@ Usage: #example
 
 
 
-Instance: DischargeDocumentHTMLBase64
+Instance: DischargeDocumentHTML
 InstanceOf: DocumentReference
 Title: "Discharge Summary Document - Base64"
 Description: "DocumentReference for discharge summary, base64 encoded HTML"
