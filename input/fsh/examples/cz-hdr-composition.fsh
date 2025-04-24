@@ -55,6 +55,7 @@ InstanceOf: CZ_CompositionHdr
 * section[2].entry[3] = Reference(AtorvastatinMedication)
 * section[2].entry[4] = Reference(CalciumD3Medication)
 * section[2].entry[5] = Reference(IronSupplementMedication)
+//* section[2].entry[6] = Reference(ColonoscopyProcedure) // Added reference to ColonoscopyProcedure
 
 * section[3].title = "Proveden\u00fd z\u00e1krok"
 * section[3].code.coding[0].system = "http://loinc.org"
@@ -83,8 +84,17 @@ InstanceOf: CZ_CompositionHdr
 * section[5].text.status = #generated
 * section[5].entry[0] = Reference(CZ-CarePlan-HDR-Example)
 
-* section[6].title = "P\u0159\u00edlohy"
-* section[6].entry[0] = Reference(DischargeDocumenPDF)
-* section[6].entry[1] = Reference(DischargeDocumentHTML)
-* section[6].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Přílohy</div>" // Added required text for cardinality
+//Add section for advanced directives
+* section[6].title = "Pokyny k o\u010dkov\u00e1n\u00ed"
+* section[6].code.coding[0].system = "http://loinc.org"
+* section[6].code.coding[0].code = #72166-2 // Corrected code assignment
+* section[6].code.coding[0].display = "Advance directives"
+* section[6].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Known advance directives</div>" // Added required text for cardinality
 * section[6].text.status = #generated
+* section[6].entry[0] = Reference(CZ-AdvanceDirectives-HDR-DNR) 
+
+* section[7].title = "P\u0159\u00edlohy"
+* section[7].entry[0] = Reference(DischargeDocumenPDF)
+* section[7].entry[1] = Reference(DischargeDocumentHTML)
+* section[7].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Přílohy</div>" // Added required text for cardinality
+* section[7].text.status = #generated
