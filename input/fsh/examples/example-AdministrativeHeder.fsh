@@ -6,9 +6,9 @@ Usage: #example
 
 * type = http://hl7.org/fhir/ValueSet/bundle-type#document
 * timestamp = "2023-10-01T12:00:00Z"
-* entry[0].resource = Reference(Example-Patient)
-* entry[1].resource = Reference(Example-Practitioner)
-* entry[2].resource = Reference(Example-Organization)
+* entry[0].resource = Reference(Mracena)
+* entry[1].resource = Reference(Location-1)
+* entry[2].resource = Reference(Organization-1)
 * meta.versionId = "1"
 * meta.lastUpdated = "2023-10-01T12:00:00Z"
 * meta.profile[0] = "http://hl7.org/fhir/StructureDefinition/Bundle"
