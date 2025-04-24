@@ -1,15 +1,14 @@
-// Instance: Bez známých alergií
-Instance: NoKnownAllergyMin
+// Instance: Není známá informace o alergii
+Instance: AllergyInfoUnknown
 InstanceOf: CZ_AllergyIntoleranceHdr
 Usage: #example
-Title: "AllergyIntolerance - No Known Allergies (min)"
-Description: "Patient has no known allergies. This example includes only the minimal necessary data."
+Title: "Allergy Information Unknown"
+Description: "No information is available regarding the patient’s allergy status."
 
-// Kód pro “žádné alergie” (SNOMED CT)
+// Kód pro “žádné známé alergie” (SNOMED CT)
 * code.coding[0].system = $sct
 * code.coding[0].code = #160244002
 * code.coding[0].display = "No known allergy"
-
 // Pacienta
 * patient = Reference(Mracena)
 
@@ -31,13 +30,13 @@ Description: "Patient has no known allergies."
 * verificationStatus.coding[0].code = #unconfirmed
 
 // Typ a závažnost (nelze posoudit)
-* type = #allergy
+// type = #allergy
 * criticality = #unable-to-assess
 
 // Kód pro “žádné alergie” (SNOMED CT)
 * code.coding[0].system = $sct
-* code.coding[0].code = #160244002
-* code.coding[0].display = "No known allergy"
+* code.coding[0].code = #443508001
+* code.coding[0].display = "No history of clinical finding in subject"
 
 // Pacienta
 * patient = Reference(Mracena)
