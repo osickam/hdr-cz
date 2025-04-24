@@ -95,4 +95,22 @@ Description: "Czech HDR - example of a Procedure - No known procedures."
 </div>
 """
  
- 
+ // 6. Procedure: Colonoscopy of angiodysplasia (CZ_ProcedureHdr)
+Instance: ColonoscopyProcedure
+InstanceOf: CZ_ProcedureHdr
+* meta.profile[0] = "https://hl7.cz/fhir/hdr/StructureDefinition/cz-procedure-hdr"
+//* id = "procedure-colonoscopy"
+* status = #completed
+* category.coding[0].system = "http://snomed.info/sct"
+* category.coding[0].code = #103693007
+* category.coding[0].display = "Diagnostic procedure"
+* code.coding[0].system = "http://snomed.info/sct"
+* code.coding[0].code = #73761001
+* code.coding[0].display = "Colonoscopy"
+* code.text = "Koloskopie"
+* subject = Reference(Mracena2)
+* performedDateTime = "2025-03-03"
+* reasonReference[0] = Reference(IronDeficiencyAnemiaCondition)
+* note[0].text = "Angiodyspl\u00e1zie v tra\u010dn\u00edku o\u0161et\u0159ena argonovou plazmakoagulac\u00ed."
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Angiodyspl\u00e1zie v tra\u010dn\u00edku o\u0161et\u0159ena argonovou plazmakoagulac\u00ed.</div>"
+* text.status = #generated
