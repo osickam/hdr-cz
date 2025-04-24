@@ -1,5 +1,5 @@
 Instance: CZ-Encounter-HDR-Example
-InstanceOf: Encounter
+InstanceOf: CZ_EncounterHdr
 Usage: #example
 Title: "CZ-Encounter-HDR Example"
 Description: "Czech HDR - example of an inpatient encounter"
@@ -74,3 +74,16 @@ Description: "Czech HDR - example of an inpatient encounter"
 
 
 
+// 7. Encounter: Inpatient hospitalization
+Instance: HospitalEncounter
+InstanceOf: CZ_EncounterHdr
+* meta.profile[0] = "https://hl7.cz/fhir/hdr/StructureDefinition/cz-encounter-hdr"
+//* id = "hospital-encounter"
+* status = #finished
+* class.code = #IMP // Corrected code assignment
+* class.system = "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+* class.display = "inpatient"
+* subject = Reference(Mracena2)
+* period.start = "2025-03-01T10:15:00+01:00"
+* period.end = "2025-03-10T09:30:00+01:00"
+* serviceProvider = Reference(RegisteringProviderExample)
