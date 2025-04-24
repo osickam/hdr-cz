@@ -87,4 +87,14 @@ InstanceOf: CZ_BundleHdr
 * entry[37].resource = Location-4
 * entry[38].fullUrl = "urn:uuid:3f85726c-ad2f-441b-89ce-1c4566ea4099"
 * entry[38].resource = Location-5
+* entry[39].fullUrl = "urn:uuid:3f85726c-ad2f-441b-89ce-1c4566ea409a"
+* entry[39].resource = CZ-AdvanceDirectives-HDR-DNR
+* entry[40].fullUrl = "urn:uuid:3f85726c-ad2f-441b-89ce-1c4566ea409b"
+* entry[40].resource = Immunization
+* entry[41].fullUrl = "urn:uuid:3f85726c-ad2f-441b-89ce-1c4566ea409c"
+* entry[41].resource = RegisteringProviderExample
+* entry[42].fullUrl = "urn:uuid:3f85726c-ad2f-441b-89ce-1c4566ea409d"
+* entry[42].resource = ExampleSdohAlcohol
+* entry[43].fullUrl = "urn:uuid:3f85726c-ad2f-441b-89ce-1c4566ea409e"
+* entry[43].resource = ExampleSdohSmoking
 
