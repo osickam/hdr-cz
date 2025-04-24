@@ -86,4 +86,4 @@ InstanceOf: CZ_EncounterHdr
 * subject = Reference(Mracena2)
 * period.start = "2025-03-01T10:15:00+01:00"
 * period.end = "2025-03-10T09:30:00+01:00"
-* serviceProvider = Reference(NemocniceOrganization)
+* serviceProvider = Reference(RegisteringProviderExample)

@@ -17,7 +17,7 @@ InstanceOf: CZ_CompositionHdr
 //* custodian = Reference(CZ_OrganizationCore)
 
 // Composition Sections:
-* section[0].title = "Diagn\u00f3zy p\u0159i propu\u0161t\u011bn\u00ed"
+* section[0].title = "Diagnostický souhrn"
 * section[0].code.coding[0].system = "http://loinc.org"
 * section[0].code.coding[0].code = #11450-4 // Corrected code assignment
 * section[0].code.coding[0].display = "Problem list"
@@ -33,7 +33,7 @@ InstanceOf: CZ_CompositionHdr
 * section[0].entry[7] = Reference(HypercholesterolemiaCondition)
 * section[0].entry[8] = Reference(PresbycusisCondition)
 
-* section[1].title = "Alergie"
+* section[1].title = "Alergie, intolerance a varování"
 * section[1].code.coding[0].system = "http://loinc.org"
 * section[1].code.coding[0].code = #48765-2 // Corrected code assignment
 * section[1].code.coding[0].display = "Allergies and adverse reactions"
@@ -43,7 +43,7 @@ InstanceOf: CZ_CompositionHdr
 * section[1].entry[1] = Reference(StrawberryAllergy)
 * section[1].entry[2] = Reference(MilkAllergy)
 
-* section[2].title = "Medikace p\u0159i propu\u0161t\u011bn\u00ed"
+* section[2].title = "Souhrn medikace"
 * section[2].code.coding[0].system = "http://loinc.org"
 * section[2].code.coding[0].code = #10160-0 // Corrected code assignment
 * section[2].code.coding[0].display = "History of medication use"
@@ -55,8 +55,9 @@ InstanceOf: CZ_CompositionHdr
 * section[2].entry[3] = Reference(AtorvastatinMedication)
 * section[2].entry[4] = Reference(CalciumD3Medication)
 * section[2].entry[5] = Reference(IronSupplementMedication)
+//* section[2].entry[6] = Reference(ColonoscopyProcedure) // Added reference to ColonoscopyProcedure
 
-* section[3].title = "Proveden\u00fd z\u00e1krok"
+* section[3].title = "Provedené zákroky"
 * section[3].code.coding[0].system = "http://loinc.org"
 * section[3].code.coding[0].code = #29545-1 // Corrected code assignment
 * section[3].code.coding[0].display = "Procedure Note"
@@ -64,8 +65,55 @@ InstanceOf: CZ_CompositionHdr
 * section[3].text.status = #generated
 * section[3].entry[0] = Reference(ColonoscopyProcedure)
 
-* section[4].title = "P\u0159\u00edlohy"
-* section[4].entry[0] = Reference(DischargeDocumenPDF)
-* section[4].entry[1] = Reference(DischargeDocumentHTML)
-* section[4].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Přílohy</div>" // Added required text for cardinality
+//Add section for laboratory results
+* section[4].title = "Výsledky vyšetření"
+* section[4].code.coding[0].system = "http://loinc.org"
+* section[4].code.coding[0].code = #24331-1 // Corrected code assignment
+* section[4].code.coding[0].display = "Laboratory results"
+* section[4].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Laboratory results at discharge</div>" // Added required text for cardinality
 * section[4].text.status = #generated
+* section[4].entry[0] = Reference(bloodcount-panel) // Corrected Reference to include the resource type
+
+//Add section for careplan
+* section[5].title = "Plán péče"
+* section[5].code.coding[0].system = "http://loinc.org"
+* section[5].code.coding[0].code = #72325-0 // Corrected code assignment
+* section[5].code.coding[0].display = "Care plan"
+* section[5].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Care plan at discharge</div>" // Added required text for cardinality
+* section[5].text.status = #generated
+* section[5].entry[0] = Reference(CZ-CarePlan-HDR-Example)
+
+//Add section for advanced directives
+* section[6].title = "Dříve vyjádřená přání"
+* section[6].code.coding[0].system = "http://loinc.org"
+* section[6].code.coding[0].code = #72166-2 // Corrected code assignment
+* section[6].code.coding[0].display = "Advance directives"
+* section[6].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Known advance directives</div>" // Added required text for cardinality
+* section[6].text.status = #generated
+* section[6].entry[0] = Reference(CZ-AdvanceDirectives-HDR-DNR) 
+
+//Add section for imunizations
+* section[7].title = "Očkování"
+* section[7].code.coding[0].system = "http://loinc.org"
+* section[7].code.coding[0].code = #11369-6 // Corrected code assignment
+* section[7].code.coding[0].display = "Immunizations"
+* section[7].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Immunizations at discharge</div>" // Added required text for cardinality
+* section[7].text.status = #generated
+* section[7].entry[0] = Reference(Immunization)
+
+//Add section for social history
+* section[8].title = "Anamnéza"
+* section[8].code.coding[0].system = "http://loinc.org"
+* section[8].code.coding[0].code = #72270-4 // Corrected code assignment
+* section[8].code.coding[0].display = "Social history"
+* section[8].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Social history at discharge</div>" // Added required text for cardinality
+* section[8].text.status = #generated
+* section[8].entry[0] = Reference(ExampleSdohSmoking)
+* section[8].entry[1] = Reference(ExampleSdohAlcohol)
+
+
+* section[9].title = "P\u0159\u00edlohy"
+* section[9].entry[0] = Reference(DischargeDocumenPDF)
+* section[9].entry[1] = Reference(DischargeDocumentHTML)
+* section[9].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Přílohy</div>" // Added required text for cardinality
+* section[9].text.status = #generated
