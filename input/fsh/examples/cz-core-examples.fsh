@@ -373,7 +373,7 @@ Description: "Example of patient Petr Novak with identification by czech nationa
 * contact[=].name.family = "Dlouhá"
 * contact[=].name.given[0] = "Alena"
 * contact[=].telecom.system = #phone
-* contact[=].telecom.value = "+420 601 111 111"
+* contact[=].telecom.value = "+420 601 222 111"
 * contact[=].telecom.use = #home
 * contact[=].address[+].use = #home
 * contact[=].address[=].type = #physical
