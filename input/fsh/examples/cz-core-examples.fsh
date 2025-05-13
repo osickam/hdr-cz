@@ -103,10 +103,6 @@ Usage: #example
 Description: "An example of the organization of a provider"
 * identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/ico"
 * identifier[=].value = "27520536"
-//add identifier for ICZ
-* identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/icz"
-* identifier[=].value = "1234567890"
-
 * type[DRZAR] = $drzar#102 "Nemocnice"
 * name = "Nemocnice Chrudim"
 * telecom.system = #phone
@@ -171,13 +167,233 @@ Description: "Birth (registration) number"
 * value = "7161264528"
 * use = #official
 
-
-Instance: Pacemaker
+//----------------------------------------------------------------------------------------
+Instance: Device-Pacemaker
 InstanceOf: CZ_MedicalDevice
 Usage: #example
 Description: "Heart pacemaker Medtronic W1DR01"
 
 * manufacturer = "Medtronic"
 * modelNumber = "W1DR01"
-* type = $sct#14106009 "Cardiac pacemaker"
-* patient = Reference(Patient/Mracena) "Pokusný Pacient"
+* type = $sct#14106009 "Kardiostimulátor"
+* patient = Reference(Patient/Mracena) "Pokusný pacient Mračena"
+
+//-----------------------------------------------------
+Instance: PractitionerRole1
+InstanceOf: CZ_PractitionerRoleCore
+Usage: #example
+Description: "General practitioner's office"
+
+* id = "practitionerrole1"
+* meta.profile[0] = "https://ncez.mzcr.cz/fhir/StructureDefinition/CZ_PractitionerRoleCore"
+
+* meta.versionId = "1"
+* meta.lastUpdated = "2019-07-01T13:30:55.864+00:00"
+* identifier.system = "http://www.acme.org/practitioners"
+* identifier.value = "23"
+* active = true
+* period.start = "2022-08-01T00:00:00.000Z"
+* period.end = "2022-12-31T00:00:00.000Z"
+* practitioner = Reference(Practitioner/Practitioner-2) "MUDr. Stanislava Kubšová"
+* organization = Reference(Organization/Organization-1) "Ordinace praktického lékaře, MUDr. Stanislava Kubšová"
+* code = $nrzp_povolani#L00 "Lékař"
+* specialty = $sct#419772000 "Rodinná praxe"
+* availableTime[0].daysOfWeek[0] = #mon
+* availableTime[=].daysOfWeek[+] = #wed
+* availableTime[=].availableStartTime = "12:30:00"
+* availableTime[=].availableEndTime = "18:30:00"
+* availableTime[=].daysOfWeek[0] = #tue
+* availableTime[+].daysOfWeek[+] = #thu
+* availableTime[=].daysOfWeek[+] = #fri
+* availableTime[=].availableStartTime = "07:00:00"
+* availableTime[=].availableEndTime = "13:00:00"
+* notAvailable.description = "Plánovaná dovolená"
+* notAvailable.during.start = "2023-08-01T00:00:00.000Z"
+* notAvailable.during.end = "2023-08-20T00:00:00.000Z"
+* availabilityExceptions = "Státní svátky"
+
+//-----------------------------------------------------
+Instance: RegisteringProviderExample-gynecology
+InstanceOf: CZ_OrganizationCore
+Title: "Organization: Registering healthcare provider example"
+Description: "Example of registering healthcare provider"
+Usage: #inline
+
+* id = "RegisteringProviderExample-gynecology"
+* meta.profile[0] = "https://ncez.mzcr.cz/fhir/StructureDefinition/CZ_OrganizationCore"
+
+* identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/ico"
+* identifier[=].value = "456789857"
+* identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/icz"
+* identifier[=].value = "12345000"
+* identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/icp"
+* identifier[=].value = "12345678"
+* type[+] = $drzar#323 "Samostatná ordinace PL - gynekologa"
+* name = "MUDr. Jana Kouzelná"
+* telecom.system = #phone
+* telecom.value = "+420 603 853 227"
+* telecom.use = #work
+* address.line = "Krátká 11, 70500 Ostrava"
+* address.city = "Ostrava"
+* address.postalCode = "70500"
+* address.country = "CZ"
+
+//-----------------------------------------------------
+Instance: Practitioner-Admitter
+InstanceOf: CZ_PractitionerCore
+Usage: #example
+Description: "Participant Admitter HDR"
+
+* id = "Practitioner-Admitter"
+* meta.profile[0] = "https://ncez.mzcr.cz/fhir/StructureDefinition/CZ_PractitionerCore"
+
+* identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/nrzp"
+* identifier[=].value = "987654321"
+//* identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/clk"
+//* identifier[=].value = "4567891230"
+* name.use = #usual
+* name.text = "MUDr. Karel Volný"
+* telecom[+].system = #phone
+* telecom[=].value = "+420 603 853 227"
+* telecom[=].use = #work
+
+//------------------------------------------------------
+Instance: Practitioner-Referrer
+InstanceOf: CZ_PractitionerCore
+Usage: #example
+Description: "Participant Referrer HDR"
+
+* id = "Practitioner-Referrer"
+* meta.profile[0] = "https://ncez.mzcr.cz/fhir/StructureDefinition/CZ_PractitionerCore"
+
+* identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/nrzp"
+* identifier[=].value = "987654777"
+//* identifier[+].system = "https://ncez.mzcr.cz/fhir/sid/clk"
+//* identifier[=].value = "4567891777"
+* name.use = #usual
+* name.text = "MUDr. Jiří Zdvořilý"
+* telecom[+].system = #phone
+* telecom[=].value = "+420 603 777 227"
+* telecom[=].use = #work
+
+
+//-----------------------------------------------------
+Instance: Practitioner-Referrer-detail
+InstanceOf: CZ_PractitionerRoleCore
+Usage: #example
+Description: "practitioner's detail"
+
+* id = "Practitioner-Referrer-detail"
+* meta.profile[0] = "https://ncez.mzcr.cz/fhir/StructureDefinition/CZ_PractitionerRoleCore"
+
+* practitioner = Reference(CZ_PractitionerCore/Practitioner-Referrer) "MUDr. Jiří Zdvořilý"
+* organization = Reference(CZ_OrganizationCore/Organization-1) "Nemocnice Chrudim"
+* code = $nrzp_povolani#L00 "Lékař"
+* specialty = $sct#419192003 "Interní lékařství"
+
+//-----------------------------------------------------
+Instance: Patient-Novak-Petr
+InstanceOf: CZ_PatientCore
+Usage: #example
+Description: "Example of patient Petr Novak with identification by czech national identifiers (RID, RCIS), registrating healthcare provider and contact information"
+
+* contained[+] = practitionerrole1  
+* contained[+] = Practitioner-2
+* contained[+] = Organization-1 
+
+// Patient details identification
+* id = "Novak-Petr"
+* identifier[+]
+  * system = "https://ncez.mzcr.cz/fhir/sid/rcis"
+  * value = "8506150015"
+  * use = #official
+* identifier[+]
+  * system = "https://ncez.mzcr.cz/fhir/sid/rid"
+  * value = "1597778923"
+
+//Patient citizenship
+* extension[citizenship].extension[code].valueCodeableConcept = urn:iso:std:iso:3166#CZ
+
+//Patient nationality
+/** extension[nationality].extension[code].valueCodeableConcept = urn:iso:std:iso:3166#CZ*/
+
+//Patient name, address and contact information
+* name.use = #usual
+* name.family = "Novák"
+* name.given = "Petr"
+* name.prefix = "Ing."
+* name.suffix = "Ph.D."
+* telecom[+].system = #phone
+* telecom[=].value = "+420 777 111 222"
+* telecom[=].use = #home
+* telecom[+].system = #phone
+* telecom[=].value = "+420 333 111 777"
+* telecom[=].use = #mobile
+* telecom[+].system = #email   
+* telecom[=].value = "novak@example.com"
+* telecom[=].use = #home
+* address[+]
+  * use = #home
+  * type = #physical
+  * text = "Pavlovova 1424/11, 568 02 Svitavy - Předměstí "
+  * line[+] = "Pavlovova 1424/11"
+    * extension[streetName].valueString = "Pavlovova"
+    * extension[houseNumber].valueString = "1424/11"
+  * city = "Svitavy - Předměstí"
+  * postalCode = "56802"
+  * country = "CZ"
+//Patient gender, birthday
+* gender = #male
+* birthDate = "1985-06-15"
+
+//Contact persons and their details
+//guardian
+* contact[+].relationship.coding[+] = $v3-RoleCode#MTH "Matka"
+* contact[=].relationship.coding[+] = $v2-0131#GUARD "Zákonný zástupce"
+* contact[=].name.use = #usual
+* contact[=].name.family = "Nováková"
+* contact[=].name.given[0] = "Alena"
+* contact[=].telecom.system = #phone
+* contact[=].telecom.value = "+420 601 111 111"
+* contact[=].telecom.use = #home
+* contact[=].address[+].use = #home
+* contact[=].address[=].type = #physical
+* contact[=].address[=].text = "Krátká 18, 708 00, Ostrava, Česká Republika"
+* contact[=].address[=].line[+] = "Krátká 18"
+* contact[=].address[=].line[=].extension[streetName].valueString = "Krátká"
+* contact[=].address[=].line[=].extension[houseNumber].valueString = "18"
+* contact[=].address[=].city = "Ostrava"
+* contact[=].address[=].postalCode = "70800"
+* contact[=].address[=].country = "CZ"
+
+//contact person
+* contact[+].relationship.coding[+] = $v3-RoleCode#FRND "přítel/přítelkyně"
+* contact[=].relationship.coding[+] = $v2-0131#N "Kontaktní osoba"
+* contact[=].name.use = #usual
+* contact[=].name.family = "Dlouhá"
+* contact[=].name.given[0] = "Alena"
+* contact[=].telecom.system = #phone
+* contact[=].telecom.value = "+420 601 333 333"
+* contact[=].telecom.use = #home
+* contact[=].address[+].use = #home
+* contact[=].address[=].type = #physical
+* contact[=].address[=].text = "Horná ulica 18, 123 45, Trenčín, Slovensko"
+* contact[=].address[=].line[+] = "Horná ulica 18"
+* contact[=].address[=].line[=].extension[streetName].valueString = "Horná ulica"
+* contact[=].address[=].line[=].extension[houseNumber].valueString = "18"
+* contact[=].address[=].city = "Trenčín"
+* contact[=].address[=].postalCode = "12345"
+* contact[=].address[=].country = "SK"
+
+//Patient communication 
+* communication[+].language = urn:ietf:bcp:47#cs
+* communication[=].preferred = true
+* communication[+].language = urn:ietf:bcp:47#en
+
+//Patient general practitioner
+* extension[registeringProvider][+].extension[value].valueReference = Reference (RegisteringProviderExample)
+* extension[registeringProvider][=].extension[category].valueCodeableConcept = $sct#700232004 "Všeobecné lékařské služby"
+/** extension[registeringProvider][+].extension[value].valueReference = Reference (RegisteringProviderExample-gynecology)
+* extension[registeringProvider][=].extension[category].valueCodeableConcept = $sct#310060005 "Gynekologické a porodnické služby"*/
+
+

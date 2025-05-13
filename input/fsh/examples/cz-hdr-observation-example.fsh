@@ -88,3 +88,27 @@ Description: "Example instance for abdominal circumference observation using the
 * valueQuantity.value = 90
 * valueQuantity.unit = "cm"
 * valueQuantity.system = "http://unitsofmeasure.org"
+
+Instance: ExampleHeight
+InstanceOf: CZ_ObservationHeightHdr
+Description: "Example instance for height observation using the CZ_ObservationHeightHdr profile."
+
+* status = #final
+* code = $loinc#8302-2 "Body height"
+* subject = Reference(Mracena2)
+* effectiveDateTime = "2024-03-28"
+* valueQuantity.value = 175
+* valueQuantity.unit = "cm"
+* valueQuantity.system = "http://unitsofmeasure.org"
+
+Instance: ExampleWeight
+InstanceOf: CZ_ObservationWeightHdr
+Description: "Example instance for weight observation using the CZ_ObservationWeightHdr profile."
+
+* status = #final
+* code = $loinc#29463-7 "Body weight"
+* subject = Reference(Mracena2)
+* effectiveDateTime = "2024-03-28"
+* valueQuantity.value = 70
+* valueQuantity.unit = "kg"
+* valueQuantity.system = "http://unitsofmeasure.org"
