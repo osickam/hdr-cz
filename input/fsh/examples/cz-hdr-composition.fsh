@@ -59,7 +59,7 @@ InstanceOf: CZ_CompositionHdr
 
 * section[3].title = "Provedené zákroky"
 * section[3].code.coding[0].system = "http://loinc.org"
-* section[3].code.coding[0].code = #29545-1 // Corrected code assignment
+* section[3].code.coding[0].code = #47519-4 // Corrected code assignment
 * section[3].code.coding[0].display = "Procedure Note"
 * section[3].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Hospital course details go here.</div>" // Added required text for cardinality
 * section[3].text.status = #generated
@@ -68,7 +68,7 @@ InstanceOf: CZ_CompositionHdr
 //Add section for laboratory results
 * section[4].title = "Výsledky vyšetření"
 * section[4].code.coding[0].system = "http://loinc.org"
-* section[4].code.coding[0].code = #24331-1 // Corrected code assignment
+* section[4].code.coding[0].code = #30954-2 // Corrected code assignment
 * section[4].code.coding[0].display = "Laboratory results"
 * section[4].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Laboratory results at discharge</div>" // Added required text for cardinality
 * section[4].text.status = #generated
@@ -77,7 +77,7 @@ InstanceOf: CZ_CompositionHdr
 //Add section for careplan
 * section[5].title = "Plán péče"
 * section[5].code.coding[0].system = "http://loinc.org"
-* section[5].code.coding[0].code = #72325-0 // Corrected code assignment
+* section[5].code.coding[0].code = #18776-5 // Corrected code assignment
 * section[5].code.coding[0].display = "Care plan"
 * section[5].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Care plan at discharge</div>" // Added required text for cardinality
 * section[5].text.status = #generated
@@ -86,7 +86,7 @@ InstanceOf: CZ_CompositionHdr
 //Add section for advanced directives
 * section[6].title = "Dříve vyjádřená přání"
 * section[6].code.coding[0].system = "http://loinc.org"
-* section[6].code.coding[0].code = #72166-2 // Corrected code assignment
+* section[6].code.coding[0].code = #75320-2 // Corrected code assignment
 * section[6].code.coding[0].display = "Advance directives"
 * section[6].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Known advance directives</div>" // Added required text for cardinality
 * section[6].text.status = #generated
@@ -96,7 +96,7 @@ InstanceOf: CZ_CompositionHdr
 * section[7].title = "Očkování"
 * section[7].code.coding[0].system = "http://loinc.org"
 * section[7].code.coding[0].code = #11369-6 // Corrected code assignment
-* section[7].code.coding[0].display = "Immunizations"
+* section[7].code.coding[0].display = "History of Immunization Narrative"
 * section[7].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Immunizations at discharge</div>" // Added required text for cardinality
 * section[7].text.status = #generated
 * section[7].entry[0] = Reference(Immunization)
@@ -104,8 +104,8 @@ InstanceOf: CZ_CompositionHdr
 //Add section for social history
 * section[8].title = "Anamnéza"
 * section[8].code.coding[0].system = "http://loinc.org"
-* section[8].code.coding[0].code = #72270-4 // Corrected code assignment
-* section[8].code.coding[0].display = "Social history"
+* section[8].code.coding[0].code = #29762-2 // Corrected code assignment
+* section[8].code.coding[0].display = "Social history Narrative"
 * section[8].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Social history at discharge</div>" // Added required text for cardinality
 * section[8].text.status = #generated
 * section[8].entry[0] = Reference(ExampleSdohSmoking)
