@@ -7,7 +7,6 @@ Description: "An instance of a Medication resource for Penicillin."
 
 * status = #active
 * manufacturer = Reference(Organization/ExampleManufacturer)
-// * form = $medication-form-codes#TAB "Tablet"
 
 // MEDICATION REQUEST – 1-0-1
 Instance: PenicillinDosage
@@ -33,7 +32,6 @@ Description: "A MedicationRequest instance for Penicillin with dosage 1-0-1 for 
 * dosageInstruction[0].route.coding[0].code = #26643006
 
 // MEDICATION REQUEST – 0-2-0
-
 Instance: PenicillinDosageNoon
 InstanceOf: MedicationRequest
 Title: "NOVALGIN [50, 500MG, TBL FLM] Dosage Noon"
