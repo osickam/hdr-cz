@@ -33,7 +33,7 @@ Description: "Panel obsahující základní hematologické hodnoty"
 * encounter = Reference(CZ-Encounter-HDR-Example)
 
 Instance: hb-result
-InstanceOf: Observation
+InstanceOf: CZ_ObservationResultLaboratory
 Title: "Hemoglobin"
 Description: "Příklad pro HDR - Hladina hemoglobinu v krvi"
 * status = #final
