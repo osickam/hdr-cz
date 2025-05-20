@@ -1,5 +1,5 @@
 Instance: bloodcount-panel
-InstanceOf: Observation
+InstanceOf: CZ_ObservationResultLaboratory
 Title: "Panel krevního obrazu"
 Description: "Panel obsahující základní hematologické hodnoty"
 * text.status = #generated
