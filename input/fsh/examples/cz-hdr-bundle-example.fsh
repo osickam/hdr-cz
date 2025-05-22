@@ -98,3 +98,28 @@ InstanceOf: CZ_BundleHdr
 * entry[43].fullUrl = "urn:uuid:3f85726c-ad2f-441b-89ce-1c4566ea409e"
 * entry[43].resource = ExampleSdohSmoking
 
+//----------------------------------------------------------------
+// 2. Bundle: Hospital Discharge Report - Novák Petr
+Instance: DischargeBundle-Novak-Petr
+InstanceOf: CZ_BundleHdr
+
+* identifier.system = "urn:ietf:rfc:3986"
+* identifier.value = "urn:uuid:c859d718-03c2-43ed-a16c-dbe57a6e34b5"    // unique Bundle ID
+* type = #document
+* timestamp = "2025-03-10T15:00:00+01:00"
+// Bundle Entries (ordered by profile slices):
+* entry[0].fullUrl = "urn:uuid:cdae7735-f7ee-4bc7-9cf3-3dc806a4eaaf"
+* entry[0].resource = DischargeComposition-Novak-Petr 
+* entry[0].resource.meta.profile[0] = "https://hl7.cz/fhir/hdr/StructureDefinition/cz-composition-hdr"
+* entry[1].fullUrl = "urn:uuid:3f85726c-ad2f-441b-89ce-1c4566ea409f"
+* entry[1].resource = Patient-Novak-Petr
+* entry[2].fullUrl = "urn:uuid:10f5c49e-086d-4016-8dd1-b555306bf620"
+* entry[2].resource = HospitalEncounter-Novak-Petr
+* entry[3].fullUrl = "urn:uuid:2b7e9637-5018-4542-9faf-d5abdee7b849"
+* entry[3].resource = Practitioner-Author-detail
+* entry[4].fullUrl = "urn:uuid:35717696-8a99-4f99-a938-ec0ec88a65a2"
+* entry[4].resource = Condition-K409
+* entry[5].fullUrl = "urn:uuid:a0ad4739-512c-4bff-8436-a6f613b2ed01"
+* entry[5].resource = Condition-E890-Novak
+* entry[6].fullUrl = "urn:uuid:6cf80cb1-9766-470f-ac36-b1d3d8950f1b"
+* entry[6].resource = Allergy-Strawberry-Novak
