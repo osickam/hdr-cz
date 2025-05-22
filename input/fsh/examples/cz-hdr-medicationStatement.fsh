@@ -67,3 +67,28 @@ InstanceOf: MedicationStatement
 * medicationCodeableConcept.text = "Sorbifer Durules (Fe++)"
 * subject = Reference(Mracena2)
 * dosage[0].text = "1-0-0"
+
+//---------------------------------------------------------------------
+Instance: Medication-Euthyrox-Novak
+InstanceOf: CZ_MedicationStatement
+//* id = "med-euthyrox-novak"
+* status = #active
+* statusReason.coding[0].system = $cz-medicationStatement-reason-status 
+* statusReason.coding[0].code = #continued
+* statusReason.coding[0].display = "Pokračuje"
+* statusReason.text = "Pokračuje"
+* reasonCode.coding[0].system = $MKN10
+* reasonCode.coding[0].code = #E039
+* reasonCode.coding[0].display = "Hypotyreóza"
+* reasonCode.text = "Hypotyreóza"
+/** medicationCodeableConcept.coding[0].system = $cz-medication-DLP
+* medicationCodeableConcept.coding[0].code = #0243131
+* medicationCodeableConcept.coding[0].display = "Euthyrox 75 mcg"
+* medicationCodeableConcept.text = "Euthyrox 75MCG TBL NOB 100 II"
+*/
+* medicationReference = Reference(Medication-Euthyrox)
+* subject = Reference(Patient-Novak-Petr)
+* identifier[0].system = $cz-medication-DLP 
+* identifier[0].value = "0243131"
+
+
