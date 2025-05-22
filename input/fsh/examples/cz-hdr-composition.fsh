@@ -144,13 +144,11 @@ InstanceOf: CZ_CompositionHdr
 * section[sectionAllergies].text.status = #generated
 * section[sectionAllergies].entry = Reference(Allergy-Strawberry-Novak)
 //Sekce Předem vyslovená přání
-* section[6].title = "Dříve vyjádřená přání"
-* section[6].code.coding[0].system = $loinc 
-* section[6].code.coding[0].code = #42348-3 
-* section[6].code.coding[0].display = "Advance directives"
-* section[6].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neresuscitovat</div>" 
-* section[6].text.status = #generated
-* section[6].entry[0] = Reference(CZ-AdvanceDirectives-HDR-DNR) 
+* section[sectionAdvanceDirectives].title = "Dříve vyjádřená přání"
+* section[sectionAdvanceDirectives].code.coding[0].display = "Advance directives"
+* section[sectionAdvanceDirectives].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Neresuscitovat</div>" 
+* section[sectionAdvanceDirectives].text.status = #generated
+* section[sectionAdvanceDirectives].entry[0] = Reference(CZ-AdvanceDirectives-HDR-DNR) 
 // Sekce Diagnostický souhrn
 * section[sectionDiagnosticSummary].title = "Diagnostický souhrn"
 * section[sectionDiagnosticSummary].code.coding[0].system = $loinc 
@@ -177,9 +175,9 @@ InstanceOf: CZ_CompositionHdr
 //Sekce Medikace
 /* * section[sectionMedication].title = "Medikace"
 * section[sectionMedication].code.coding[0].system = $loinc
-* section[sectionMedication].code.coding[0].code = #10160-0 // History of medication use
-* section[sectionMedication].code.coding[0].display = "Souhrn medikace"
-* section[sectionMedication].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Medikace při propuštění</div>" // Corrected to Narrative type
+* section[sectionMedication].code.coding[0].code = #75311-1 
+* section[sectionMedication].code.coding[0].display = "Discharge medications Narrative"
+* section[sectionMedication].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Medikace při propuštění</div>" 
 * section[sectionMedication].text.status = #generated
 * section[sectionMedication].entry[0] = Reference(LevothyroxineMedication)
 */

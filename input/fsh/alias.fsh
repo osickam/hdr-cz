@@ -86,6 +86,10 @@ Alias: $cz-allergyintolerance-puvodce = http://hl7.org/fhir/uv/ips/ValueSet/alle
 Alias: $cz-allergyintolerance-riziko = http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality
 Alias: $cz-allergyintolerance-reakce = http://hl7.org/fhir/uv/ips/ValueSet/allergy-reaction-uv-ips
 Alias: $cz-allergyintolerance-reakce-zavaznost = http://hl7.org/fhir/ValueSet/reaction-event-severity
+Alias: $cz-medicationStatement-reason-status = http://hl7.org/fhir/ValueSet/reason-medication-status-codes
+Alias: $cz-medication-DLP = https://hl7.cz/fhir/core/ValueSet/dlplecivepripravky-cz-vs
+Alias: $cz-medication-DLPForma =  https://hl7.cz/fhir/core/ValueSet/dlpformy-cz-vs
+Alias: $cz-medicationDLPLecive-latky = https://hl7.cz/fhir/core/ValueSet/dlplecivelatky-cz-vs
 
 //=========================
 //Other
@@ -93,3 +97,5 @@ Alias: $composition-category = http://hl7.org/fhir/ValueSet/document-classcodes
 Alias: $allergyintolerance-clinical = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical
 Alias: $allergyintolerance-verification = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification
 Alias: $encounter-participant-type = http://hl7.org/fhir/ValueSet/encounter-participant-type
+Alias: $MKN10 = http://hl7.org/fhir/sid/icd-10
+Alias: $Jednotky = http://hl7.org/fhir/ValueSet/ucum-units
