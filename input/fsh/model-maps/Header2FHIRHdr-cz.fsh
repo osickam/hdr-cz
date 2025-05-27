@@ -11,7 +11,7 @@ Usage: #definition
 * group[=].target = "https://hl7.cz/fhir/base/StructureDefinition/organization-cz"
 * group[=].element[+].code = #Header.payer.insuranceCode
 * group[=].element[=].display = "A.1.3.1 - Health insurance code"
-* group[=].element[=].target.code = #Organization.identifier
+* group[=].element[=].target.code = #Organization.identifier.KP
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[+].code = #Header.payer.insuranceName
@@ -46,7 +46,7 @@ Usage: #definition
 * group[=].element[=].target.code = #PractitionerRole
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[=].target.comment = "Composition.author.resolve().ofType(PractitionerRole)"
+* group[=].element[=].target.comment = "Composition.author.resolve().ofType(PractitionerRole).confirmsTo('https://hl7.cz/fhir/core/StructureDefinition/cz-practitioner-core')"
 * group[=].element[+].code = #Header.author.identifier
 * group[=].element[=].display = "A.1.5.1 - Author identifier"
 * group[=].element[=].target.code = #PractitionerRole.identifier					
@@ -74,7 +74,7 @@ Usage: #definition
 * group[=].element[=].target.code = #PractitionerRole
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[=].target.comment = "where attester.mode = 'professional' AND Composition.attester.party.resolve().ofType(PractitionerRole)"
+* group[=].element[=].target.comment = "where attester.mode = 'professional' AND Composition.attester.party.resolve().ofType(PractitionerRole).confirmsTo('https://hl7.cz/fhir/core/StructureDefinition/cz-practitionerrole-core')"
 * group[=].element[+].code = #Header.attester.identifier
 * group[=].element[=].display = "A.1.6.1 - Attester identifier"
 * group[=].element[=].target.code = #PractitionerRole.identifier					
@@ -100,7 +100,7 @@ Usage: #definition
 * group[=].element[=].target.code = #PractitionerRole					
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
-* group[=].element[=].target.comment = "where attester.mode = 'legal' AND Composition.attester.party.resolve().ofType(PractitionerRole)"
+* group[=].element[=].target.comment = "where attester.mode = 'legal' AND Composition.attester.party.resolve().ofType(PractitionerRole).conformsTo('https://hl7.cz/fhir/core/StructureDefinition/cz-practitionerrole-core')"
 * group[=].element[+].code = #Header.legalAuthenticator.identifier
 * group[=].element[=].display = "A.1.7.1 - Legal authenticator identifier"
 * group[=].element[=].target.code = #PractitionerRole.identifier					
@@ -157,7 +157,7 @@ Usage: #definition
 * group[=].element[=].target.code = #Composition.section:sectionPayers.entry	
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #relatedto					
-* group[=].element[=].target.comment = "Composition.section:sectionPayers.entry.ofType(Coverage)	"
+* group[=].element[=].target.comment = "Composition.section:sectionPayers.entry.ofType(Coverage).conformsTo('https://hl7.cz/fhir/core/StructureDefinition/cz-coverage')"
 * group[=].element[+].code = #Header.informationRecipient
 * group[=].element[=].display = "A.1.4 - Information recipient - (intended recipient or recipients of the report), if applicable"
 * group[=].element[=].target.code = #Composition.extension:information-recipient					
@@ -281,25 +281,25 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[=].target.comment = "As business version, not as resource version"
 * group[+].source = "http://hl7.eu/fhir/hdr/StructureDefinition/Header"
-* group[=].target = "http://hl7.org/fhir/StructureDefinition/Coverage"
+* group[=].target = "https://hl7.cz/fhir/base/StructureDefinition/cz-coverage"
 * group[=].element[+].code = #Header.payer.insuranceCode
 * group[=].element[=].display = "A.1.3.1 - Health insurance code"
 * group[=].element[=].target.code = #Coverage.payor
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #relatedto					
-* group[=].element[=].target.comment = "Coverage.payor.ofType(Organization)"
+* group[=].element[=].target.comment = "Coverage.payor.ofType(Organization).conformsTo('https://hl7.cz/fhir/core/StructureDefinition/cz-organization-core')"
 * group[=].element[+].code = #Header.payer.insuranceName
 * group[=].element[=].display = "A.1.3.2 - Health insurance name"
 * group[=].element[=].target.code = #Coverage.payor
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #relatedto					
-* group[=].element[=].target.comment = "Coverage.payor.ofType(Organization)"
+* group[=].element[=].target.comment = "Coverage.payor.ofType(Organization).conformsTo('https://hl7.cz/fhir/core/StructureDefinition/cz-organization-core')"
 * group[=].element[+].code = #Header.payer.insuranceNumber
 * group[=].element[=].display = "A.1.3.3 - Health insurance number"
 * group[=].element[=].target.code = #Coverage.beneficiary
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #relatedto					
-* group[=].element[=].target.comment = "Coverage.beneficiary.ofType(Patient)"
+* group[=].element[=].target.comment = "Coverage.beneficiary.ofType(Patient).conformsTo('https://hl7.cz/fhir/core/StructureDefinition/cz-patient')"
 * group[+].source = "http://hl7.eu/fhir/hdr/StructureDefinition/Header"
 * group[=].target = "http://hl7.org/fhir/StructureDefinition/ServiceRequest"
 * group[=].element[+].code = #Header.payer
@@ -307,4 +307,4 @@ Usage: #definition
 * group[=].element[=].target.code = #ServiceRequest.insurance
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #relatedto					
-* group[=].element[=].target.comment = "ServiceRequest.insurance.ofType(Coverage)"
+* group[=].element[=].target.comment = "ServiceRequest.insurance.ofType(Coverage).conformsTo('https://hl7.cz/fhir/core/StructureDefinition/cz-coverage')"

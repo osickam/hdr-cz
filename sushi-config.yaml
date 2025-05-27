@@ -40,10 +40,12 @@ dependencies:
   hl7.fhir.cz.core: current
   hl7.fhir.eu.hdr: current
   hl7.fhir.eu.laboratory: current
-  hl7.fhir.eu.base.r4: current
+  hl7.fhir.eu.base: current
   hl7.fhir.extensions.r5: 4.0.1
   ihe.pharm.mpd: current
   hl7.fhir.eu.extensions: current
+  hl7.fhir.cz.lab: current
+  
   
   
     
@@ -71,6 +73,10 @@ dependencies:
 pages:
   index.md:
     title: Home
+  #  general-guidance.md:
+  #    title: General guidance
+  Implementation.md:
+    Model Maps: model-map.html
   profiles-and-extensions.md:
     title: Profiles and extensions
   downloads.md:
@@ -148,6 +154,7 @@ menu:
 #  Guidance:
 #    General guidance: general-guidance.html
 #    Identifiers: identifiers.html
+  Implementation: implementation.html
   Artifacts: artifacts.html
     # Czech artifacts: 
     #Profiles and extensions: profiles-and-extensions.html

@@ -168,3 +168,54 @@ Description: "Patient, contact information and practitioner"
 * name.use = #usual
 * name.family = "Mrakomorová"
 * name.given = "Mračena"
+
+//-----------------------------
+Instance: Allergy-Strawberry-Novak
+InstanceOf: CZ_AllergyIntoleranceHdr
+Usage: #example
+Title: "AllergyIntolerance - Strawberry"
+Description: "Patient experiences itching and tongue swelling in response to strawberries."
+// // Narrativní text
+// * text.status = #generated
+// * text.div = xmlns=\"http://www.w3.org/1999/xhtml\"<div><p>Alergie na jahody – svědění, otok jazyka.</p></div>"
+// Stav
+* clinicalStatus.coding[0].system = $allergyintolerance-clinical
+* clinicalStatus.coding[0].code = #active
+* verificationStatus.coding[0].system = $allergyintolerance-verification
+* verificationStatus.coding[0].code = #confirmed
+// Typ a závažnost
+/** type.coding[0].system =  $cz-allergyintolerance-typ-reakce
+* type.coding[0].code = #allergy
+* type.coding[0].display = "Allergy"
+*/
+* type = #allergy
+//* type = #allergy
+/*
+* criticality.coding[0].system = $cz-allergyintolerance-riziko
+* criticality.coding[0].code = #low
+* criticality.coding[0].display = "Low"
+*/
+* criticality = #low
+// Alergen (SNOMED CT)
+* code.coding[0].system = $cz-allergyintolerance-puvodce
+* code.coding[0].code = #91938006
+* code.coding[0].display = "Allergy to strawberry"
+* onsetDateTime = "2020-01-01"
+// Pacient
+* patient = Reference(Patient-Novak-Petr)
+// Reakce
+* reaction[0].manifestation[0].coding[0].system = $cz-allergyintolerance-reakce
+* reaction[0].manifestation[0].coding[0].code = #418363000
+* reaction[0].manifestation[0].coding[0].display = "Itching of skin"
+* reaction[0].manifestation[1].coding[0].system = $cz-allergyintolerance-reakce
+* reaction[0].manifestation[1].coding[0].code = #81950002
+* reaction[0].manifestation[1].coding[0].display = "Edema of the tongue"
+* reaction[0].description = "Svědění, otok jazyka."
+/*
+* reaction[0].severity.coding[0].system = $cz-allergyintolerance-reakce-zavaznost
+* reaction[0].severity.coding[0].code = #mild
+* reaction[0].severity.coding[0].display = "Mírná"
+*/
+* reaction[0].severity = #mild
+
+

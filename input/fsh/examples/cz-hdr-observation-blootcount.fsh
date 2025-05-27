@@ -1,5 +1,5 @@
 Instance: bloodcount-panel
-InstanceOf: Observation
+InstanceOf: CZ_ObservationResultLaboratory
 Title: "Panel krevního obrazu"
 Description: "Panel obsahující základní hematologické hodnoty"
 * text.status = #generated
@@ -33,7 +33,7 @@ Description: "Panel obsahující základní hematologické hodnoty"
 * encounter = Reference(CZ-Encounter-HDR-Example)
 
 Instance: hb-result
-InstanceOf: Observation
+InstanceOf: CZ_ObservationResultLaboratory
 Title: "Hemoglobin"
 Description: "Příklad pro HDR - Hladina hemoglobinu v krvi"
 * status = #final
