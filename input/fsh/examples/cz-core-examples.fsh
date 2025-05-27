@@ -96,6 +96,9 @@ Usage: #inline
 * identifier[=].value = "456789655"
 * type[+] = $cz-drzar#320 "Samost. ordinace všeob. prakt. lékaře"
 * name = "MUDr. Stanislava Kubšová"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Samost. ordinace všeob. prakt. lékaře, MUDr. Stanislava Kubšová</div>"
+* text.status = #generated  
+
 
 Instance: Organization-1
 InstanceOf: CZ_OrganizationCore
@@ -445,3 +448,20 @@ Usage: #inline
 * address.country = "CZ"
 * text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Ambulance interního lékařství, MUDr. Jiří Zdvořilý, Krátká 29, 70500 Ostrava, tel: +420 603 853 888</div>"
 * text.status = #generated
+
+//-----------------------------------------------------
+Instance: Practitioner-UZV
+InstanceOf: CZ_PractitionerCore
+Usage: #example
+Description: "Participant UZV HDR"
+* id = "Practitioner-UZV"
+* meta.profile[0] = "https://hl7.cz/fhir/core/StructureDefinition/cz-practitioner-core"
+* identifier[+].system = $cz-practitioner-NRZP
+* identifier[=].value = "987654322"
+//* identifier[+].system = $cz-practitioner-CLK 
+//* identifier[=].value = "4567891231"
+* name.use = #usual
+* name.text = "MUDr. Karel Janák"
+* telecom[+].system = #phone
+* telecom[=].value = "+420 603 853 287"
+* telecom[=].use = #work
