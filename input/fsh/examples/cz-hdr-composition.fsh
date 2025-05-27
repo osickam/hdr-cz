@@ -132,7 +132,9 @@ InstanceOf: CZ_CompositionHdr
 * category[0].coding[0].display = "Discharge summary"
 * title = "Propouštěcí zpráva"
 * date = "2025-03-10T14:30:00+01:00"
-* author = Reference(Practitioner-Author-detail)            // document authored by practitioner role
+* author[0] = Reference(Practitioner-Author)  
+* author[0] = Reference(Practitioner-Author-detail) 
+* author[0] = Reference(CZ_OrganizationCore/Organization-1)         // document authored by practitioner role
 * subject = Reference(Patient-Novak-Petr)            // document subject is patient
 * encounter = Reference(HospitalEncounter-Novak-Petr)
 // Sekce Alergie
@@ -155,13 +157,12 @@ InstanceOf: CZ_CompositionHdr
 * section[sectionDiagnosticSummary].code.coding[0].code = #11450-4 // Problem list
 * section[sectionDiagnosticSummary].code.coding[0].display = "Diagnostický souhrn"
 * section[sectionDiagnosticSummary].text.div = """
-<div xmlns="http://www.w3.org/1999/xhtml">
-  <p>K40.9 – Inguinální kýla, nespecifikovaná </p>
-  <p>E89.0 – Hypotyreóza po léčbě (v anamnéze) </p>
-</div>
-"""
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <p>K40.9 – Inguinální kýla, nespecifikovaná </p>
+    <p>E89.0 – Hypotyreóza po léčbě (v anamnéze) </p>
+  </div>
+  """
 * section[sectionDiagnosticSummary].text.status = #generated
-* section[sectionDiagnosticSummary].title = "Diagnostický souhrn"
 * section[sectionDiagnosticSummary].entry[0] = Reference(Condition-K409)
 * section[sectionDiagnosticSummary].entry[1] = Reference(Condition-E890-Novak)
 // Sekce Významné procedury
@@ -172,15 +173,56 @@ InstanceOf: CZ_CompositionHdr
 * section[sectionSignificantProcedures].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Plastika pravostranné tříselné kýly dne 2. 3. 2025.</div>" 
 * section[sectionSignificantProcedures].text.status = #generated
 * section[sectionSignificantProcedures].entry[0] = Reference(Procedure-inguinal-hernia)
-//Sekce Medikace
-/* * section[sectionMedication].title = "Medikace"
-* section[sectionMedication].code.coding[0].system = $loinc
-* section[sectionMedication].code.coding[0].code = #75311-1 
-* section[sectionMedication].code.coding[0].display = "Discharge medications Narrative"
-* section[sectionMedication].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Medikace při propuštění</div>" 
-* section[sectionMedication].text.status = #generated
-* section[sectionMedication].entry[0] = Reference(LevothyroxineMedication)
+//Sekce Souhrn Medikace
+* section[sectionMedications].title = "Medikace"
+* section[sectionMedications].code.coding[0].system = $loinc
+* section[sectionMedications].code.coding[0].code = #10160-0 
+* section[sectionMedications].code.coding[0].display = "Discharge medications Narrative"
+* section[sectionMedications].text.div = """
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <p>Medikace při propuštění</p>
+    <ul>
+      <li>Euthyrox 75 µg denně – substituce hypotyreózy</li>
+      <li>Paracetamol 500 mg – při bolesti</li>
+      <li>Ibalgin 400 mg – při bolesti</li> 
+    </ul> 
+  </div>
+  """
+* section[sectionMedications].text.status = #generated
+* section[sectionMedications].entry[0] = Reference(MedicationStatement-Euthyrox-Novak)
+* section[sectionMedications].entry[1] = Reference(MedicationStatement-Paracetamol-Novak)
+* section[sectionMedications].entry[2] = Reference(MedicationStatement-Ibalgin400-Novak)
+
+///sekce Výsledky vyšetření
+* section[sectionSignificantResults].title = "Výsledky vyšetření"
+* section[sectionSignificantResults].code.coding[0].system = $loinc
+* section[sectionSignificantResults].code.coding[0].code = #30954-2  //Relevant diagnostic tests/laboratory data
+* section[sectionSignificantResults].code.coding[0].display = "Výsledky vyšetření"
+* section[sectionSignificantResults].text.div = """
+  <div xmlns="http://www.w3.org/1999/xhtml">
+    <p>Významné výsledky vyšetření v průběhu hospitalizace</p>
+    <ul>
+      <li>UZ vyšetření pravého třísla: v oblasti tříselného kanálu patrný hypoechogenní vak komunikující s peritoneální dutinou, obsahující střevní kličku. Obsah je mobilní, bez známek ischemie. Závěr: vpravo tříselná kýla bez známek komplikace.</li>
+      <li>CRP: 6 mg/L (norma: 0–10 mg/L)</li>   
+    </ul>
+  </div>"""
+* section[sectionSignificantResults].text.status = #generated
+* section[sectionSignificantResults].entry[0] = Reference(Observation-UZV-Novak) // Corrected Reference to include the resource type
+* section[sectionSignificantResults].entry[1] = Reference(Observation-CRP-Novak) // Corrected Reference to include the resource type
+/*
+* section[sectionSignificantResults].entry[radResults] = Reference(Observation-UZV-Novak) 
+* section[sectionSignificantResults].entry[labResults] = Reference(Observation-CRP-Novak) 
 */
+
+/* // Sekce Historie Implantátů
+* section[sectionMedicalDevices].title = "Zdravotní pomůcky a implantáty"
+* section[sectionMedicalDevices].code.coding[0].system = $loinc
+* section[sectionMedicalDevices].code.coding[0].code = #46264-8 // Historie implantátů
+* section[sectionMedicalDevices].code.coding[0].display = "Medical devices and implants"  
+* section[sectionMedicalDevices].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Pacient nemá žádné zdravotní pomůcky ani implantáty.</div>" // Added required text for cardinality
+* section[sectionMedicalDevices].text.status = #generated
+*/
+
 //Sekce Průběh hospitalizace - klinické shrnutí
 * section[sectionHospitalCourse].title = "Průběh hospitalizace"
 * section[sectionHospitalCourse].code.coding[0].system = $loinc 
@@ -193,7 +235,22 @@ Pacient byl v dobrém stavu propuštěn do domácího ošetření dne 10. 3. 202
 * section[sectionHospitalCourse].text.status = #generated
 * section[sectionHospitalCourse].title = "Průběh hospitalizace - klinické shrnutí"
 
-
+//sekce Doporučení - Plán péče
+* section[sectionPlanOfCare].title = "Plán péče"
+* section[sectionPlanOfCare].code.coding[0].system = "http://loinc.org"
+* section[sectionPlanOfCare].code.coding[0].code = #18776-5   //Plan of care note  (58222-1 .. Discharge plan)
+* section[sectionPlanOfCare].code.coding[0].display = "Plán péče"
+* section[sectionPlanOfCare].text.div = """
+  <div xmlns="http://www.w3.org/1999/xhtml">
+  <p>Plán péče – tříselná kýla </p>
+     <ul>
+      <li>Pooperační sledování, převazy, kontrola rány.</li>
+      <li>Edukace pacienta o režimu po operaci.</li>
+      <li>Ambulantní kontrola za 14 dní.</li>
+    </ul>
+  </div>"""
+* section[sectionPlanOfCare].text.status = #generated
+* section[sectionPlanOfCare].entry[0] = Reference(CarePlan-Novak)
 /*
 //Sekce Údaje o hospitalizaci
 * section[sectionEncounters].title = "Údaje o hospitalizaci"
@@ -203,40 +260,6 @@ Pacient byl v dobrém stavu propuštěn do domácího ošetření dne 10. 3. 202
 * section[sectionEncounters].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"Pacient byl přijat pro bolestivý útvar v pravém třísle, suspektní tříselná kýla."
 * section[sectionEncounters].entry[0] = Reference(HospitalEncounter-Novak-Petr) 
 * section[sectionEncounters].entry[1] = Reference(Condition-K409) 
-
-* section[2].title = "Souhrn medikace"
-* section[2].code.coding[0].system = "http://loinc.org"
-* section[2].code.coding[0].code = #10160-0 // Corrected code assignment
-* section[2].code.coding[0].display = "History of medication use"
-* section[2].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Medication at discharge</div>" // Corrected to Narrative type
-* section[2].text.status = #generated
-* section[2].entry[0] = Reference(LevothyroxineMedication)
-* section[2].entry[1] = Reference(RivaroxabanMedication)
-* section[2].entry[2] = Reference(BisoprololMedication)
-* section[2].entry[3] = Reference(AtorvastatinMedication)
-* section[2].entry[4] = Reference(CalciumD3Medication)
-* section[2].entry[5] = Reference(IronSupplementMedication)
-//* section[2].entry[6] = Reference(ColonoscopyProcedure) // Added reference to ColonoscopyProcedure
-
-
-//Add section for laboratory results
-* section[4].title = "Výsledky vyšetření"
-* section[4].code.coding[0].system = "http://loinc.org"
-* section[4].code.coding[0].code = #24331-1 // Corrected code assignment
-* section[4].code.coding[0].display = "Laboratory results"
-* section[4].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Laboratory results at discharge</div>" // Added required text for cardinality
-* section[4].text.status = #generated
-* section[4].entry[0] = Reference(bloodcount-panel) // Corrected Reference to include the resource type
-
-//Add section for careplan
-* section[5].title = "Plán péče"
-* section[5].code.coding[0].system = "http://loinc.org"
-* section[5].code.coding[0].code = #72325-0 // Corrected code assignment
-* section[5].code.coding[0].display = "Care plan"
-* section[5].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Care plan at discharge</div>" // Added required text for cardinality
-* section[5].text.status = #generated
-* section[5].entry[0] = Reference(CZ-CarePlan-HDR-Example)
-
 
 //Add section for imunizations
 * section[7].title = "Očkování"
@@ -257,7 +280,7 @@ Pacient byl v dobrém stavu propuštěn do domácího ošetření dne 10. 3. 202
 * section[8].entry[0] = Reference(ExampleSdohSmoking)
 * section[8].entry[1] = Reference(ExampleSdohAlcohol)
 
-
+// Add section for attachments
 * section[9].title = "P\u0159\u00edlohy"
 * section[9].entry[0] = Reference(DischargeDocumenPDF)
 * section[9].entry[1] = Reference(DischargeDocumentHTML)
