@@ -52,6 +52,7 @@ Description: "Příklad pro HDR - Hladina hemoglobinu v krvi"
 * interpretation = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#N "Normal"
 * note.text = "Hladina hemoglobinu je v normálním rozmezí."
 * specimen = Reference(Specimen-EDTA-1)
+* performer = Reference(Lab-HematologieBrno)
 
 Instance: hct-result
 InstanceOf: Observation

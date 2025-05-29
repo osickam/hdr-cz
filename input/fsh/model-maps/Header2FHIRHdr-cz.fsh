@@ -8,7 +8,7 @@ Usage: #definition
 * experimental = true
 * description = """CZ HDR Header Model to this guide mapping"""
 * group[+].source = "http://hl7.eu/fhir/hdr/StructureDefinition/Header"
-* group[=].target = "https://hl7.cz/fhir/base/StructureDefinition/organization-cz"
+* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-organization-core"
 * group[=].element[+].code = #Header.payer.insuranceCode
 * group[=].element[=].display = "A.1.3.1 - Health insurance code"
 * group[=].element[=].target.code = #Organization.identifier.KP
@@ -20,7 +20,7 @@ Usage: #definition
 * group[=].element[=].target.display = ""
 * group[=].element[=].target.equivalence = #equivalent					
 * group[+].source = "http://hl7.eu/fhir/hdr/StructureDefinition/Header"
-* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-patient"
+* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-patient-core"
 * group[=].element[+].code = #Header.subject
 * group[=].element[=].display = "A.1.1 - Identification and A.1.2 - related contact information of the Patient/subject"
 * group[=].element[=].target.code = #Patient
@@ -34,7 +34,7 @@ Usage: #definition
 * group[=].element[=].target.equivalence = #equivalent					
 * group[=].element[=].target.comment = "If treated as one of the Patient identifiers; this applies in some jurisdictions."
 * group[+].source = "http://hl7.eu/fhir/hdr/StructureDefinition/Header"
-* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-practitionerrole"
+* group[=].target = "https://hl7.cz/fhir/core/StructureDefinition/cz-practitionerrole-core"
 * group[=].element[+].code = #Header.informationRecipient.identifier
 * group[=].element[=].display = "A.1.4.1 - Recipient identifier"
 * group[=].element[=].target.code = #PractitionerRole.identifier
