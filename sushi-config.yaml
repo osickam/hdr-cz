@@ -154,7 +154,7 @@ menu:
 #  Guidance:
 #    General guidance: general-guidance.html
 #    Identifiers: identifiers.html
-  Implementation: implementation.html
+#  Implementation: implementation.html
   Artifacts: artifacts.html
     # Czech artifacts: 
     #Profiles and extensions: profiles-and-extensions.html
