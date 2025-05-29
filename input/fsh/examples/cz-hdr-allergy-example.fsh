@@ -4,7 +4,11 @@ InstanceOf: CZ_AllergyIntoleranceHdr
 Usage: #example
 Title: "Allergy Information Unknown"
 Description: "No information is available regarding the patient’s allergy status."
-
+// Povinný identifikátor
+* identifier[0].system = "urn:oid:1.2.203.24341.1.1.999"
+* identifier[0].value = "no-known-allergy-001"
+//clinicalStatus
+* clinicalStatus = #active
 // Kód pro “žádné známé alergie” (SNOMED CT)
 * code.coding[0].system = $sct
 * code.coding[0].code = #160244002
@@ -18,9 +22,11 @@ InstanceOf: CZ_AllergyIntoleranceHdr
 Usage: #example
 Title: "AllergyIntolerance - No Known Allergies"
 Description: "Patient has no known allergies."
-
+// Povinný identifikátor
+* identifier[0].system = "urn:oid:1.2.203.24341.1.1.999"
+* identifier[0].value = "NoKnownAllergy-001"
 // Narrativní text
-* text.status = #generated
+* text.status = #additional
 * text.div = "<div><p>Pacient nemá žádné známé alergie.</p></div>"
 
 // Klinický a verifikační stav
@@ -47,7 +53,9 @@ InstanceOf: CZ_AllergyIntoleranceHdr
 Usage: #example
 Title: "AllergyIntolerance - Strawberry"
 Description: "Patient experiences itching and tongue swelling in response to strawberries."
-
+// Povinný identifikátor
+* identifier[0].system = "urn:oid:1.2.203.24341.1.1.999"
+* identifier[0].value = "StrawberryAllergy-001"
 // // Narrativní text
 // * text.status = #generated
 // * text.div = "<div><p>Alergie na jahody – svědění, otok jazyka.</p></div>"
@@ -85,9 +93,11 @@ InstanceOf: cz-allergyIntolerance-hdr
 Usage: #example
 Title: "AllergyIntolerance - Penicillin"
 Description: "Patient experiences skin rash and lip swelling in response to penicillin."
-
+// Povinný identifikátor
+* identifier[0].system = "urn:oid:1.2.203.24341.1.1.999"
+* identifier[0].value = "PenicillinAllergy-001"
 // Narrativní text
-* text.status = #generated
+* text.status = #additional
 * text.div = "<div><p>Alergie na penicilin – kožní vyrážka, otok rtů.</p></div>"
 
 // Stav
@@ -123,9 +133,11 @@ InstanceOf: CZ_AllergyIntoleranceHdr
 Usage: #example
 Title: "AllergyIntolerance - cow's milk protein"
 Description: "Patient experiences rash and itching after ingestion of cow's milk protein due to intolerance."
+// Povinný identifikátor
+* identifier[0].system = "urn:oid:1.2.203.24341.1.1.999"
+* identifier[0].value = "MilkAllergy-001"
 
-
-* text.status = #generated
+* text.status = #additional
 * text.div = """
 <div>
   <p>Intolerance na bílkovinu kravského mléka</p>
@@ -175,6 +187,9 @@ InstanceOf: CZ_AllergyIntoleranceHdr
 Usage: #example
 Title: "AllergyIntolerance - Strawberry"
 Description: "Patient experiences itching and tongue swelling in response to strawberries."
+// Povinný identifikátor
+* identifier[0].system = "urn:oid:1.2.203.24341.1.1.999"
+* identifier[0].value = "Allergy-Strawberry-Novak-001"
 // // Narrativní text
 // * text.status = #generated
 // * text.div = xmlns=\"http://www.w3.org/1999/xhtml\"<div><p>Alergie na jahody – svědění, otok jazyka.</p></div>"
