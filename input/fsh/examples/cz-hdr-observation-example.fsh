@@ -154,7 +154,9 @@ Description: "Czech HDR - example of CRP observation for Novák Petr"
 * referenceRange[0].high.system = $Jednotky
 * referenceRange[0].high.code = #"mg/L"
 * referenceRange[0].text = "Norma: 0–10 mg/L"
-* interpretation[0].coding[0].code  = $observation-interpretation#N "Normal" 
+* interpretation[0].coding[0].system = $observation-interpretation
+* interpretation[0].coding[0].display = "Normal"
+* interpretation[0].coding[0].code  = #N
 
 //-----------------------------------------
 Instance: Observation-TSH-Novak
@@ -182,7 +184,9 @@ Description: "Czech HDR - example of TSH observation for Novák Petr"
 * referenceRange[0].high.system = $Jednotky
 * referenceRange[0].high.code = #"mIU/L"
 * referenceRange[0].text = "Norma: 0.4–4.0 mIU/L"
-* interpretation[0].coding[0].code  = $observation-interpretation#N "Normal"
+* interpretation[0].coding[0].system = $observation-interpretation
+* interpretation[0].coding[0].display = "Normal"
+* interpretation[0].coding[0].code  = #N
 //-----------------------------------------
 
 Instance: Observation-Height-Novak
